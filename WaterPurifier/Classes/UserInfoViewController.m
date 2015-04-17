@@ -56,6 +56,7 @@
     self.titleArr = [NSArray arrayWithObjects:@"13760170861",@"修改密码",@"注销", nil];
     self.tableView.delegate = self;
     self.tableView.dataSource =self;
+    self.tableView.backgroundColor = [UIColor whiteColor];
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.frame = CGRectMake(0, CGRectGetMaxY(self.headView.frame), MRScreenWidth, MRScreenHeight-stanavh-CGRectGetHeight(self.headView.frame));
     //TODO:
@@ -214,21 +215,22 @@
 }
 -(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
-    return 22;
+    if (section == 0) {
+        return 22;
+    }
+    return 100;
 }
 -(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 3;
+    return 2;
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (section == 0) {
+    if (section == 0)
         return 2;
-    }else if (section == 1){
-        return 2;
-    }else {
+    else
         return 1;
-    }
+    
     
 }
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -243,17 +245,12 @@
     CGFloat cell_w = cell.frame.size.width;
     CGFloat cell_h = cell.frame.size.height;
     
-//    UIImageView *imageView = [[UIImageView alloc] initWithFrame:cell.frame];
-//    UIImage *image = [UIImage imageNamed:@"LightGrey.png"];
-//    imageView.image = image;
-//    cell.backgroundView = imageView;
-    
     [[cell detailTextLabel] setTextColor:[UIColor grayColor]];
     cell.detailTextLabel.font = [UIFont systemFontOfSize:14];
     
-    if(indexPath.section == 2){
+    if(indexPath.section == 1){
         UILabel *LogoutLabel = [[UILabel alloc]initWithFrame:CGRectMake(space, 0, cell_w-space*2, cell.frame.size.height)];
-        LogoutLabel.text = [self.titleArr objectAtIndex:indexPath.section *2 + indexPath.row];
+        LogoutLabel.text =@"注销";
         LogoutLabel.font = [UIFont systemFontOfSize:13];
         LogoutLabel.textColor = [UIColor whiteColor];
         LogoutLabel.textAlignment = NSTextAlignmentCenter;
@@ -263,34 +260,27 @@
     }else{
         LineView *line =[[LineView alloc]initWithColor:[UIColor colorWithRed:231/255.0f green:231/255.0f blue:231/255.0f alpha:1] andFrame:CGRectMake(15, cell_h-1, cell_w-30, 1)];
         [cell addSubview:line];
-        cell.detailTextLabel.text = [self.titleArr objectAtIndex:indexPath.section *2 + indexPath.row];
+        NSInteger index =  indexPath.row;
+        cell.detailTextLabel.text = [self.titleArr objectAtIndex:index];
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
     
     return cell;
 }
-
+- (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
+{
+    UIView *headView = [[UIView alloc]init] ;
+    [headView setBackgroundColor:[UIColor whiteColor]];
+    return headView;
+}
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     UIStoryboard *storyboard = self.storyboard;
     UIViewController *vc = nil;
     vc.view.autoresizesSubviews = TRUE;
     vc.view.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
-    if (indexPath.section == 1) {
-        if (indexPath.row == 0){
-            vc = [storyboard instantiateViewControllerWithIdentifier:@"newPwdViewController"];
-            [self.navigationController pushViewController:vc animated:YES];
-        }
-        
-        else if (indexPath.row == 1){
-            vc = [storyboard instantiateViewControllerWithIdentifier:@"MyServeViewController"];
-            [self.navigationController pushViewController:vc animated:YES];
-        }
-
-        
-#pragma mark --注销
-    }else if (indexPath.section == 2){
+     if (indexPath.section == 1){
         [[NSNotificationCenter defaultCenter]postNotificationName:@"ToLoginVC" object:nil];
         
     }

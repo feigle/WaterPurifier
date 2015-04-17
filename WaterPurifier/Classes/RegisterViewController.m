@@ -8,7 +8,7 @@
 
 #import "RegisterViewController.h"
 #define REGIST @"regist"
-#define REGIST_ACTION    @"user/register"
+#define REGIST_ACTION    @"register"
 #define tarGetTF 1003
 
 @interface RegisterViewController ()<RequestManagerDelegate>
@@ -28,7 +28,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    self.userNameTF.text = @"ckh";
+    self.inputPwdTF.text = @"test";
     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName, nil]];
     [self.userNameTF performSelector:@selector(becomeFirstResponder) withObject:nil afterDelay:0.4];
     
@@ -129,8 +130,9 @@
     [request setDelegate:self];
     
     NSMutableDictionary* formData = [NSMutableDictionary dictionaryWithCapacity:0];
-    [formData setValue:self.userNameTF.text     forKey:@"userName"];
-    [formData setValue:self.inputPwdTF.text     forKey:@"pwd"];
+    [formData setValue:self.userNameTF.text     forKey:@"account"];
+    [formData setValue:self.inputPwdTF.text     forKey:@"password"];
+    [formData setValue:@"1"    forKey:@"type"];
     [request requestWithType:AsynchronousType RequestTag:REGIST FormData:formData Action:REGIST_ACTION];
 }
 

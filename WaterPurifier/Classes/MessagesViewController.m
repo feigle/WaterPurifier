@@ -44,7 +44,7 @@
     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName, nil]];
     
     
-    arrTest = [NSArray arrayWithObjects:@"设备：192.168.0.1",@"设备：192.168.0.1",@"设备：192.168.0.1", @"设备：192.168.0.1",@"设备：192.168.0.1",@"设备：192.168.0.1",@"设备：192.168.0.1",@"设备：192.168.0.1",@"设备：192.168.0.1",@"设备：192.168.0.1",@"设备：192.168.0.1",@"设备：192.168.0.1",@"设备：192.168.0.1", @"设备：192.168.0.1",@"设备：192.168.0.1",@"设备：192.168.0.1",@"设备：192.168.0.1",@"设备：192.168.0.1",@"设备：192.168.0.1",@"设备：192.168.0.1",nil];
+    arrTest = [NSArray arrayWithObjects:@"设备 1092",@"设备 1092",@"设备 1092",@"设备 1092",@"设备 1092",@"设备 1092",@"设备 1092",@"设备 1092",@"设备 1092",@"设备 1092",@"设备 1092",@"设备 1092",@"设备 1092",nil];
     muArr = [[NSMutableArray alloc]init];
     for (NSString *text in arrTest) {
         float height = [self heightForString:text fontSize:13 andWidth:SCREEN_WIDTH-cellSpace-20]+30;
@@ -95,7 +95,7 @@
         [[NSNotificationCenter defaultCenter] postNotificationName:CustomTableViewCellNotificationChangeToUnexpanded object:nil];
     }
     else if (buttonIndex==0){
-        UIActionSheet* actionSheet=[[UIActionSheet alloc]initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"查看" otherButtonTitles:@"标记为已阅",@"编辑", nil];
+        UIActionSheet* actionSheet=[[UIActionSheet alloc]initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:@"查看" otherButtonTitles:@"解除绑定",@"编辑", nil];
         [actionSheet showInView:self.view];
     }
 }

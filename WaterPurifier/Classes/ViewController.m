@@ -67,7 +67,7 @@
     bacImage.image = [UIImage imageNamed:@"userInfoBG"];
     [self.view addSubview:bacImage];
     
-    arr = [NSArray arrayWithObjects:@"主页",@"设备",@"帮助",@"更多", nil];
+    arr = [NSArray arrayWithObjects:@"主页",@"更多",@"注销", nil];
     imgArr = [NSArray arrayWithObjects:@"iconDev",@"iconDev",@"iconDev",@"iconMore", nil];
     self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, MRScreenHeight, MRScreenHeight)];
     self.tableView.dataSource = self;
@@ -90,7 +90,7 @@
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 5;
+    return 4;
 }
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -197,12 +197,7 @@
     
     else if (indexPath.row == 1)
         vc = [storyboard instantiateViewControllerWithIdentifier:@"TabBarController"];
-    
-    else if (indexPath.row == 2)
-         vc = [storyboard instantiateViewControllerWithIdentifier:@"playOnlineNV"];
-    else if (indexPath.row == 3)
-        vc = [storyboard instantiateViewControllerWithIdentifier:@"DevStoreNV"];
-    else if (indexPath.row == 4){
+    else if (indexPath.row == 2){
         vc = [storyboard instantiateViewControllerWithIdentifier:@"moreNV"];
     }else{
         vc = [storyboard instantiateViewControllerWithIdentifier:@"LoginNV"];

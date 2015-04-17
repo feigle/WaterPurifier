@@ -37,6 +37,14 @@
     // Do any additional setup after loading the view.
 }
 
-
+- (IBAction)menuButtonPressed:(id)sender
+{
+    XDKAirMenuController *menu = [XDKAirMenuController sharedMenu];
+    
+    if (menu.isMenuOpened)
+        [menu closeMenuAnimated];
+    else
+        [menu openMenuAnimated];
+}
 
 @end

@@ -9,6 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface MyDeviceViewController : UIViewController<UIActionSheetDelegate>
-@property (weak, nonatomic) IBOutlet UITabBarItem *theabBarItem;
 
 @end

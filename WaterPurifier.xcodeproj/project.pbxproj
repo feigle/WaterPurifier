@@ -11,19 +11,14 @@
 		004245041AE0088D0058A1B0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 004245031AE0088D0058A1B0 /* main.m */; };
 		004245081AE009230058A1B0 /* WaterPurifierTests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 004245071AE009230058A1B0 /* WaterPurifierTests-Info.plist */; };
 		0042450B1AE0092F0058A1B0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 004245091AE0092F0058A1B0 /* InfoPlist.strings */; };
-		0052C2001AE006E0008DE355 /* addDevManuallyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0052C1DE1AE006E0008DE355 /* addDevManuallyViewController.m */; };
 		0052C2011AE006E0008DE355 /* AlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0052C1E01AE006E0008DE355 /* AlbumViewController.m */; };
-		0052C2021AE006E0008DE355 /* DevStoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0052C1E21AE006E0008DE355 /* DevStoreViewController.m */; };
 		0052C2031AE006E0008DE355 /* FeedBackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0052C1E41AE006E0008DE355 /* FeedBackViewController.m */; };
 		0052C2041AE006E0008DE355 /* ForgetPwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0052C1E61AE006E0008DE355 /* ForgetPwdViewController.m */; };
 		0052C2051AE006E0008DE355 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0052C1E81AE006E0008DE355 /* LoginViewController.m */; };
 		0052C2061AE006E0008DE355 /* MessageDetailViewcontroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 0052C1EA1AE006E0008DE355 /* MessageDetailViewcontroller.m */; };
 		0052C2071AE006E0008DE355 /* MessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0052C1EC1AE006E0008DE355 /* MessagesViewController.m */; };
 		0052C2081AE006E0008DE355 /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0052C1EE1AE006E0008DE355 /* MoreViewController.m */; };
-		0052C2091AE006E0008DE355 /* MyCamaraViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0052C1F01AE006E0008DE355 /* MyCamaraViewController.m */; };
 		0052C20A1AE006E0008DE355 /* MyDeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0052C1F21AE006E0008DE355 /* MyDeviceViewController.m */; };
-		0052C20B1AE006E0008DE355 /* PlayOnlineViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0052C1F41AE006E0008DE355 /* PlayOnlineViewController.m */; };
-		0052C20C1AE006E0008DE355 /* QEScannerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0052C1F61AE006E0008DE355 /* QEScannerViewController.m */; };
 		0052C20E1AE006E0008DE355 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0052C1F91AE006E0008DE355 /* RegisterViewController.m */; };
 		0052C20F1AE006E0008DE355 /* UserInfoTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0052C1FB1AE006E0008DE355 /* UserInfoTableView.m */; };
 		0052C2101AE006E0008DE355 /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0052C1FD1AE006E0008DE355 /* UserInfoViewController.m */; };
@@ -333,12 +328,8 @@
 		004245031AE0088D0058A1B0 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = WaterPurifier/main.m; sourceTree = SOURCE_ROOT; };
 		004245071AE009230058A1B0 /* WaterPurifierTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "WaterPurifierTests-Info.plist"; path = "WaterPurifierTests/WaterPurifierTests-Info.plist"; sourceTree = SOURCE_ROOT; };
 		0042450A1AE0092F0058A1B0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = WaterPurifierTests/en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
-		0052C1DD1AE006E0008DE355 /* addDevManuallyViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = addDevManuallyViewController.h; sourceTree = "<group>"; };
-		0052C1DE1AE006E0008DE355 /* addDevManuallyViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = addDevManuallyViewController.m; sourceTree = "<group>"; };
 		0052C1DF1AE006E0008DE355 /* AlbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumViewController.h; sourceTree = "<group>"; };
 		0052C1E01AE006E0008DE355 /* AlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumViewController.m; sourceTree = "<group>"; };
-		0052C1E11AE006E0008DE355 /* DevStoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DevStoreViewController.h; sourceTree = "<group>"; };
-		0052C1E21AE006E0008DE355 /* DevStoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DevStoreViewController.m; sourceTree = "<group>"; };
 		0052C1E31AE006E0008DE355 /* FeedBackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedBackViewController.h; sourceTree = "<group>"; };
 		0052C1E41AE006E0008DE355 /* FeedBackViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FeedBackViewController.m; sourceTree = "<group>"; };
 		0052C1E51AE006E0008DE355 /* ForgetPwdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ForgetPwdViewController.h; sourceTree = "<group>"; };
@@ -351,14 +342,8 @@
 		0052C1EC1AE006E0008DE355 /* MessagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagesViewController.m; sourceTree = "<group>"; };
 		0052C1ED1AE006E0008DE355 /* MoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreViewController.h; sourceTree = "<group>"; };
 		0052C1EE1AE006E0008DE355 /* MoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreViewController.m; sourceTree = "<group>"; };
-		0052C1EF1AE006E0008DE355 /* MyCamaraViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyCamaraViewController.h; sourceTree = "<group>"; };
-		0052C1F01AE006E0008DE355 /* MyCamaraViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyCamaraViewController.m; sourceTree = "<group>"; };
 		0052C1F11AE006E0008DE355 /* MyDeviceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDeviceViewController.h; sourceTree = "<group>"; };
 		0052C1F21AE006E0008DE355 /* MyDeviceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDeviceViewController.m; sourceTree = "<group>"; };
-		0052C1F31AE006E0008DE355 /* PlayOnlineViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayOnlineViewController.h; sourceTree = "<group>"; };
-		0052C1F41AE006E0008DE355 /* PlayOnlineViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayOnlineViewController.m; sourceTree = "<group>"; };
-		0052C1F51AE006E0008DE355 /* QEScannerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QEScannerViewController.h; sourceTree = "<group>"; };
-		0052C1F61AE006E0008DE355 /* QEScannerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QEScannerViewController.m; sourceTree = "<group>"; };
 		0052C1F81AE006E0008DE355 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		0052C1F91AE006E0008DE355 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
 		0052C1FA1AE006E0008DE355 /* UserInfoTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoTableView.h; sourceTree = "<group>"; };
@@ -814,12 +799,8 @@
 		0052C1DC1AE006E0008DE355 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				0052C1DD1AE006E0008DE355 /* addDevManuallyViewController.h */,
-				0052C1DE1AE006E0008DE355 /* addDevManuallyViewController.m */,
 				0052C1DF1AE006E0008DE355 /* AlbumViewController.h */,
 				0052C1E01AE006E0008DE355 /* AlbumViewController.m */,
-				0052C1E11AE006E0008DE355 /* DevStoreViewController.h */,
-				0052C1E21AE006E0008DE355 /* DevStoreViewController.m */,
 				0052C1E31AE006E0008DE355 /* FeedBackViewController.h */,
 				0052C1E41AE006E0008DE355 /* FeedBackViewController.m */,
 				0052C1E51AE006E0008DE355 /* ForgetPwdViewController.h */,
@@ -832,14 +813,8 @@
 				0052C1EC1AE006E0008DE355 /* MessagesViewController.m */,
 				0052C1ED1AE006E0008DE355 /* MoreViewController.h */,
 				0052C1EE1AE006E0008DE355 /* MoreViewController.m */,
-				0052C1EF1AE006E0008DE355 /* MyCamaraViewController.h */,
-				0052C1F01AE006E0008DE355 /* MyCamaraViewController.m */,
 				0052C1F11AE006E0008DE355 /* MyDeviceViewController.h */,
 				0052C1F21AE006E0008DE355 /* MyDeviceViewController.m */,
-				0052C1F31AE006E0008DE355 /* PlayOnlineViewController.h */,
-				0052C1F41AE006E0008DE355 /* PlayOnlineViewController.m */,
-				0052C1F51AE006E0008DE355 /* QEScannerViewController.h */,
-				0052C1F61AE006E0008DE355 /* QEScannerViewController.m */,
 				0052C1F81AE006E0008DE355 /* RegisterViewController.h */,
 				0052C1F91AE006E0008DE355 /* RegisterViewController.m */,
 				0052C1FA1AE006E0008DE355 /* UserInfoTableView.h */,
@@ -1974,7 +1949,6 @@
 				A47822021A88931E008B9111 /* MJRefreshConst.m in Sources */,
 				A48076A01AB180C9009E0362 /* GTMBase64.m in Sources */,
 				A435286D1A7721F100F4F65C /* SBJsonParser.m in Sources */,
-				0052C20B1AE006E0008DE355 /* PlayOnlineViewController.m in Sources */,
 				A47822511A88B294008B9111 /* TGCameraColor.m in Sources */,
 				A4A220591ABBB05E0093272F /* GPLoadingView.m in Sources */,
 				0052C2311AE007AA008DE355 /* STDb.m in Sources */,
@@ -2001,11 +1975,9 @@
 				A41D64561AA9A330006AD79D /* RMDisplayLabel.m in Sources */,
 				A4A2206A1ABBB0830093272F /* XDKAirMenuController.m in Sources */,
 				0052C2321AE007AA008DE355 /* STDbHandle.m in Sources */,
-				0052C2091AE006E0008DE355 /* MyCamaraViewController.m in Sources */,
 				A4A2204A1ABBB04A0093272F /* NSDate+JLAddtions.m in Sources */,
 				A435286E1A7721F100F4F65C /* SBJsonWriter.m in Sources */,
 				A4A220481ABBB04A0093272F /* JLAES+JLAdditions.m in Sources */,
-				0052C2001AE006E0008DE355 /* addDevManuallyViewController.m in Sources */,
 				A435286A1A7721F100F4F65C /* NSString+SBJSON.m in Sources */,
 				0052C2061AE006E0008DE355 /* MessageDetailViewcontroller.m in Sources */,
 				0052C2151AE00719008DE355 /* AppDelegate.m in Sources */,
@@ -2038,12 +2010,10 @@
 				A47822591A88B294008B9111 /* TGCameraFilterView.m in Sources */,
 				A4A220581ABBB05E0093272F /* ActivityIndicatorView.m in Sources */,
 				A41D64571AA9A331006AD79D /* RMDownloadIndicator.m in Sources */,
-				0052C20C1AE006E0008DE355 /* QEScannerViewController.m in Sources */,
 				A43528701A7721F100F4F65C /* rc4_skey.c in Sources */,
 				A4A220671ABBB0830093272F /* PRTween.m in Sources */,
 				A43528691A7721F100F4F65C /* NSObject+SBJSON.m in Sources */,
 				A4A2205B1ABBB05E0093272F /* TimeControlView.m in Sources */,
-				0052C2021AE006E0008DE355 /* DevStoreViewController.m in Sources */,
 				A47822551A88B294008B9111 /* TGCameraShot.m in Sources */,
 				0052C2051AE006E0008DE355 /* LoginViewController.m in Sources */,
 				A46375701A8618680050F615 /* JLBlurView.m in Sources */,

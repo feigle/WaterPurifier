@@ -213,8 +213,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 #define kUD [NSUserDefaults standardUserDefaults]
 
 
-#define HOST                        @"http://192.168.3.110:8082/webapp"//鄢吉
-//#define HOST                        @"http://120.24.222.61:8080/webapp"//鄢吉外网
+#define HOST                        @"http://localhost/user/"//鄢吉
 //是否加密
 
 

@@ -23,7 +23,7 @@
     [super viewDidLoad];
     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName, nil]];
     
-    cellTextArr = [NSArray arrayWithObjects:@"功能设置",@"数据流量统计",@"帮助",@"意见反馈",@"关于我们",@"检查更新", nil];
+    cellTextArr = [NSArray arrayWithObjects:@"功能设置",@"帮助",@"意见反馈",@"关于我们",@"检查更新", nil];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.tableView.frame = CGRectMake(0, 0, MRScreenWidth, MRScreenHeight);
@@ -34,14 +34,12 @@
 {
     if (section == 0) {
         return 1;
-    }else if (section == 1){
-        return 1;
     }
     return 4;
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
 {
-    return 3;
+    return 2;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
 {
@@ -58,8 +56,6 @@
             index = indexPath.row;
         }else if (indexPath.section == 1){
             index = 1 + indexPath.row;
-        }else{
-            index = 2 + indexPath.row;
         }
         
         cell.textLabel.textColor = [UIColor grayColor];
@@ -73,7 +69,7 @@
 {
     if (indexPath.section == 0) {
         [self showNotice:@"本功能暂未开放,敬请期待!"];
-    }else if (indexPath.section == 2){
+    }else if (indexPath.section == 1){
         switch (indexPath.row) {
             case 1:
                 [CommonFunc pushViewController:self.navigationController andControllerID:@"feedback" andStoryBoard:self.storyboard];

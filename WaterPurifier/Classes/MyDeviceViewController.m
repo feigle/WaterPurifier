@@ -45,7 +45,6 @@
     }];
 
     [self.tableView reloadData];
-    self.title = @"设备";
     self.tableView.contentSize = CGSizeMake(MRScreenWidth, (cell_h+kSpace)*5);
     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName, nil]];
 }
@@ -69,36 +68,11 @@
         cell = [[UITableViewCell alloc]initWithStyle:UITableViewCellStyleDefault reuseIdentifier:cellId];
         
         UIView *view = [[UIView alloc]initWithFrame:CGRectMake(kSpace, kSpace, MRScreenWidth-kSpace*2, cell_h-kSpace)];
+        view.backgroundColor = [UIColor lightGrayColor];
         [cell addSubview:view];
         
-        //播放按钮
-        UIImageView *videoImg = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, view.frame.size.width, view.frame.size.height)];
-        videoImg.image = [UIImage imageNamed:@"camaraDemo.png"];
-        [view addSubview:videoImg];
         
-        UIView *barView = [[UIView alloc]initWithFrame:CGRectMake(0, 0, view.frame.size.width, 30)];
-        barView.backgroundColor = [UIColor clearColor];
-//        barView.alpha = 0.6;
-        [view addSubview:barView];
         
-        float width = (barView.frame.size.width-kSpace)/2;
-        UILabel *devNameLabel = [[UILabel alloc]initWithFrame:CGRectMake(10, 0, width, 30)];
-//        devNameLabel.text = @"客厅";
-        devNameLabel.font = [UIFont systemFontOfSize:13];
-        devNameLabel.textColor = [UIColor whiteColor];
-        [barView addSubview:devNameLabel];
-        
-        UILabel *devTimeLabel = [[UILabel alloc]initWithFrame:CGRectMake(width, 0, width, 30)];
-//        devTimeLabel.text = @"2015-01-27 22:00";
-        devTimeLabel.font = [UIFont systemFontOfSize:13];
-        devTimeLabel.textAlignment = NSTextAlignmentRight;
-        devTimeLabel.textColor = [UIColor whiteColor];
-        [barView addSubview:devTimeLabel];
-        //播放按钮
-        UIImageView *playImg = [[UIImageView alloc]initWithFrame:CGRectMake(0, 0, 50, 50)];
-        playImg.image = [UIImage imageNamed:@"playButton"];
-        playImg.center = view.center;
-        [view addSubview:playImg];
         
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
     }
@@ -106,13 +80,7 @@
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UIStoryboard *storyboard = self.storyboard;
-    UIViewController *vc = nil;
-    vc.view.autoresizesSubviews = TRUE;
-    vc.view.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
-    vc = [storyboard instantiateViewControllerWithIdentifier:@"MyCamaraVC"];
-    vc.tabBarController.view.hidden = YES;
-    [self.navigationController pushViewController:vc animated:YES];
+   
 }
 - (IBAction)menuButtonPressed:(id)sender
 {
@@ -124,37 +92,6 @@
         [menu openMenuAnimated];
 }
 
-- (IBAction)pushViewController:(id)sender {
-    
-    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:nil delegate:self cancelButtonTitle:@"取消" destructiveButtonTitle:nil otherButtonTitles:@"添加设备",@"删除设备", nil];
-    [sheet showInView:self.view];
-}
--(void)actionSheet:(UIActionSheet *)actionSheet clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    
-    switch (buttonIndex) {
-        case 0:
-            [self toQRCocdeViewController];//二维码页面
-            break;
-        case  1:
-            [self showDleleView];
-            break;
-            
-        default:
-            break;
-    }
-}
-#pragma mark -- 二维码页面
-- (void)toQRCocdeViewController
-{
-    UIStoryboard *storyboard = self.storyboard;
-    UIViewController *vc = nil;
-    vc.view.autoresizesSubviews = TRUE;
-    vc.view.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
-    vc = [storyboard instantiateViewControllerWithIdentifier:@"QRCodeVC"];
-    vc.tabBarController.view.hidden = YES;
-    [self.navigationController pushViewController:vc animated:YES];
-}
 #pragma mark --显示删除相关的视图
 - (void)showDleleView
 {
