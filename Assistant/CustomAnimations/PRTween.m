@@ -435,7 +435,6 @@ static NSArray *animationSelectorsForUIView = nil;
             for (NSString *selector in animationSelectorsForCoreAnimation) {
                 NSString *setter = NSStringFromSelector(operation.boundSetter);
                 if ([selector isEqualToString:setter]) {
-                    CLog(@"Using Core Animation for %@", NSStringFromSelector(operation.boundSetter));
                     operation.canUseBuiltAnimation = YES;
                     
                     NSString *propertyUnformatted = [selector stringByReplacingCharactersInRange:NSMakeRange(0, 3) withString:@""];
@@ -474,7 +473,6 @@ static NSArray *animationSelectorsForUIView = nil;
             for (NSString *selector in animationSelectorsForUIView) {
                 NSString *setter = NSStringFromSelector(operation.boundSetter);
                 if ([selector isEqualToString:setter]) {
-                    CLog(@"Using UIView Animation for %@", NSStringFromSelector(operation.boundSetter));
                     
                     operation.canUseBuiltAnimation = YES;
                     
@@ -629,7 +627,6 @@ complete:
                         [lerpPeriod setProgress:progress];
                     } else {
                         // @TODO: Throw exception
-                        CLog(@"Class doesn't conform to PRTweenLerp");
                         
                     }
                 } else {

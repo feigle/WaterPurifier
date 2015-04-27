@@ -7,7 +7,7 @@
 //
 
 #import "NetworkView.h"
-
+#import "Macros.h"
 @implementation NetworkView
 @synthesize alertView;
 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0027AACB1AEE82C500248D36 /* RSA.m in Sources */ = {isa = PBXBuildFile; fileRef = 0027AACA1AEE82C500248D36 /* RSA.m */; };
 		004245021AE008800058A1B0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 004245001AE008800058A1B0 /* InfoPlist.strings */; };
 		004245041AE0088D0058A1B0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 004245031AE0088D0058A1B0 /* main.m */; };
 		004245081AE009230058A1B0 /* WaterPurifierTests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 004245071AE009230058A1B0 /* WaterPurifierTests-Info.plist */; };
@@ -324,6 +325,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0027AAC91AEE82C500248D36 /* RSA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSA.h; sourceTree = "<group>"; };
+		0027AACA1AEE82C500248D36 /* RSA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSA.m; sourceTree = "<group>"; };
 		004245011AE008800058A1B0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = WaterPurifier/en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
 		004245031AE0088D0058A1B0 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = WaterPurifier/main.m; sourceTree = SOURCE_ROOT; };
 		004245071AE009230058A1B0 /* WaterPurifierTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "WaterPurifierTests-Info.plist"; path = "WaterPurifierTests/WaterPurifierTests-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -929,6 +932,8 @@
 				A43528831A77245D00F4F65C /* OpenUDID */,
 				A43528891A77245D00F4F65C /* wldh_md5.h */,
 				A435288A1A77245D00F4F65C /* wldh_md5.m */,
+				0027AAC91AEE82C500248D36 /* RSA.h */,
+				0027AACA1AEE82C500248D36 /* RSA.m */,
 				A43528271A7721F100F4F65C /* Network */,
 			);
 			path = Assistant;
@@ -1977,6 +1982,7 @@
 				0052C2321AE007AA008DE355 /* STDbHandle.m in Sources */,
 				A4A2204A1ABBB04A0093272F /* NSDate+JLAddtions.m in Sources */,
 				A435286E1A7721F100F4F65C /* SBJsonWriter.m in Sources */,
+				0027AACB1AEE82C500248D36 /* RSA.m in Sources */,
 				A4A220481ABBB04A0093272F /* JLAES+JLAdditions.m in Sources */,
 				A435286A1A7721F100F4F65C /* NSString+SBJSON.m in Sources */,
 				0052C2061AE006E0008DE355 /* MessageDetailViewcontroller.m in Sources */,
@@ -2190,7 +2196,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WaterPurifier/WaterPurifier-Prefix.pch";
 				INFOPLIST_FILE = "WaterPurifier/WaterPurifier-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Extend/QREncodersdk",
@@ -2205,6 +2211,7 @@
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = WaterPurifier;
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};
@@ -2229,7 +2236,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WaterPurifier/WaterPurifier-Prefix.pch";
 				INFOPLIST_FILE = "WaterPurifier/WaterPurifier-Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Extend/QREncodersdk",
@@ -2244,6 +2251,7 @@
 				OTHER_LDFLAGS = "-all_load";
 				PRODUCT_NAME = WaterPurifier;
 				PROVISIONING_PROFILE = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
 			};

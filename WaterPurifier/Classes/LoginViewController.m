@@ -8,10 +8,11 @@
 
 #import "LoginViewController.h"
 #import "RegisterViewController.h"
+#import "Macros.h"
 #import "user.h"
 #import "Device.h"
-#define LOGIN @"login.do"
-#define LOGIN_ACTION    @"user/login.do"
+#define LOGIN @"login"
+#define LOGIN_ACTION    @"user/login"
 @interface LoginViewController ()<UITextFieldDelegate,UIScrollViewDelegate,RequestManagerDelegate>
 {
     RequestManager *request;
@@ -87,9 +88,9 @@
     [XDKAirMenuController sharedMenu].moveEnable = NO;
     self.scrollView.contentSize = CGSizeMake(MRScreenWidth, MRScreenHeight);
     self.scrollView.scrollEnabled = NO;
-    self.userNameTF.text = @"13760170861";
+    self.userNameTF.text = @"ckh";
     if (isRecord)
-        self.PwdTF.text = @"123123";
+        self.PwdTF.text = @"test";
     else
         self.PwdTF.text = nil;
     
@@ -129,9 +130,9 @@
 }
 #pragma mark -- 登录按钮
 - (IBAction)didLoginBtnClicked:(id)sender {
-    [self hidKeyboard];
-    [self toIndexPage];
-    return;
+//    [self hidKeyboard];
+//    [self toIndexPage];
+//    return;
     if (self.userNameTF.text.length <1) {
         [self showNotice:@"请输入用户名!"];
         return;
@@ -144,9 +145,9 @@
     [request setDelegate:self];
     
     NSMutableDictionary* formData = [NSMutableDictionary dictionaryWithCapacity:0];
-    [formData setValue:self.userNameTF.text    forKey:@"userName"];
-    [formData setValue:self.PwdTF.text      forKey:@"pwd"];
-    [formData setValue:@"8a6d98d6a0b3f55a45d0dd72b07b332eb741871d7f77dedf2e320042977a1939" forKey:@"token"];
+    [formData setValue:self.userNameTF.text    forKey:@"account"];
+    [formData setValue:self.PwdTF.text      forKey:@"password"];
+//    [formData setValue:@"8a6d98d6a0b3f55a45d0dd72b07b332eb741871d7f77dedf2e320042977a1939" forKey:@"token"];
     [request requestWithType:AsynchronousType RequestTag:LOGIN FormData:formData Action:LOGIN_ACTION];
 }
 -(void)request:(ASIHTTPRequest *)request didReceiveResponseHeaders:(NSDictionary *)responseHeaders RequestTag:(NSString *)requestTag
@@ -155,23 +156,26 @@
 }
 -(void)requestFinish:(ASIHTTPRequest *)retqust Data:(NSDictionary *)data RequestTag:(NSString *)requestTag
 {
-    NSDictionary *infoDic = [data objectForKey:@"info"];
-    if ([[data objectForKey:@"success"] boolValue]) {
-//        保存用户信息
-        NSString *uid = [infoDic objectForKey:@"id"];
-
-        [kUD setObject:self.userNameTF.text forKey:@"userName"];
-        [kUD setObject:self.PwdTF.text forKey:@"pwd"];
-        [kUD setObject:uid forKey:@"uid"];
-//        是否保存密码
-        [kUD setBool:isRecord forKey:@"isRecord"];
-//        是否自动登录
-        [kUD setBool:isAutoLogin forKey:@"isAutoLogin"];
-        User *user = [[User alloc]init];
-        user.name = self.userNameTF.text;
-        user.phone = self.PwdTF.text;
-        user.uid = uid;
-        [user insertToDb];
+    if ([[data objectForKey:@"state"] boolValue]) {
+        NSString *openid = [data objectForKey:@"openid"];
+        NSString *token = [data objectForKey:@"token"];
+////        保存用户信息
+//        NSString *uid = [infoDic objectForKey:@"id"];
+//
+        [kUD setObject:self.userNameTF.text forKey:@"account"];
+        [kUD setObject:self.PwdTF.text forKey:@"password"];
+        [kUD setObject:openid forKey:@"openid"];
+        [kUD setObject:token forKey:@"token"];
+//
+////        是否保存密码
+//        [kUD setBool:isRecord forKey:@"isRecord"];
+////        是否自动登录
+//        [kUD setBool:isAutoLogin forKey:@"isAutoLogin"];
+//        User *user = [[User alloc]init];
+//        user.name = self.userNameTF.text;
+//        user.phone = self.PwdTF.text;
+//        user.uid = uid;
+//        [user insertToDb];
 
 //        跳转到首页
         [self toIndexPage];

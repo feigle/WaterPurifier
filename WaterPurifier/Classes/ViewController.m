@@ -10,6 +10,8 @@
 #import "MyDeviceViewController.h"
 #import "PRTween.h"
 #import "IndicatorViewCustom.h"
+#import "Macros.h"
+
 @interface ViewController ()<XDKAirMenuDelegate>
 {
     NSArray *arr;

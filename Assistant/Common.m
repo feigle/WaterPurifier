@@ -7,7 +7,7 @@
 //
 
 #define LOADINGTAG  987
-
+#import "Macros.h"
 #import "Common.h"
 #import "MBProgressHUD.h"
 //#import "RegexKitLite.h"

@@ -7,7 +7,7 @@
 //
 
 #import "MyDeviceViewController.h"
-
+#import "Macros.h"
 
 #define kSpace 10
 #define cell_h 200

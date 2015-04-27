@@ -5,7 +5,7 @@
 //  Created by bjdz on 15-3-3.
 //  Copyright (c) 2015年 joblee. All rights reserved.
 //
-
+#import "Macros.h"
 #import "DetailViewController.h"
 #import <MediaPlayer/MediaPlayer.h>
 #import "UIImage+Category.h"
@@ -57,7 +57,6 @@
     }];
     
     
-    CLog(@"tap");
 }
 - (void)scrollViewScrollEnable
 {

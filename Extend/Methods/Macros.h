@@ -213,7 +213,7 @@ blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 #define kUD [NSUserDefaults standardUserDefaults]
 
 
-#define HOST                        @"http://localhost/user/"//鄢吉
+#define HOST                        @"http://device.dengke.me:8080"//鄢吉
 //是否加密
 
 

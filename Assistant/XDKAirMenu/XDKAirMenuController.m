@@ -7,7 +7,7 @@
 //
 
 #import "XDKAirMenuController.h"
-
+#import "Macros.h"
 #define WIDTH_OPENED (45.f)
 #define MIN_SCALE_CONTROLLER (0.8f)
 #define MIN_SCALE_TABLEVIEW (0.8f)

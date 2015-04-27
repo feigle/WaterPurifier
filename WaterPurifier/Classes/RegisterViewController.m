@@ -7,8 +7,11 @@
 //
 
 #import "RegisterViewController.h"
+#import "Macros.h"
 #define REGIST @"regist"
-#define REGIST_ACTION    @"register"
+#define REGIST_ACTION    @"user/register"
+#define Active @"userActivate"
+#define ActiveAction @"user/userActivate"
 #define tarGetTF 1003
 
 @interface RegisterViewController ()<RequestManagerDelegate>
@@ -30,6 +33,7 @@
     [super viewDidLoad];
     self.userNameTF.text = @"ckh";
     self.inputPwdTF.text = @"test";
+    self.inputAgainTf.text = @"test";
     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName, nil]];
     [self.userNameTF performSelector:@selector(becomeFirstResponder) withObject:nil afterDelay:0.4];
     
@@ -120,6 +124,7 @@
     NSMutableDictionary* formData = [NSMutableDictionary dictionaryWithCapacity:0];
     [formData setValue:self.userNameTF.text     forKey:@"userName"];
     [formData setValue:self.inputPwdTF.text      forKey:@"pwd"];
+    [formData setValue:@"type"     forKey:@"0"];
     [request requestWithType:AsynchronousType RequestTag:REGIST FormData:formData Action:REGIST_ACTION];
 }
 #pragma mark -- 注册
@@ -142,7 +147,31 @@
 }
 -(void)requestFinish:(ASIHTTPRequest *)retqust Data:(NSDictionary *)data RequestTag:(NSString *)requestTag
 {
-
+    if ([[data objectForKey:@"state"] boolValue]) {//成功
+        if ([requestTag isEqualToString:@"regist"]) {//注册
+            NSString *openid = [data objectForKey:@"openid"];
+            NSString *token = [data objectForKey:@"token"];
+            NSString *activationid = [data objectForKey:@"activationid"];
+            NSMutableDictionary* formData = [NSMutableDictionary dictionaryWithCapacity:0];
+            [formData setValue:openid     forKey:@"openid"];
+            [formData setValue:token     forKey:@"token"];
+            [formData setValue:activationid    forKey:@"activationid"];
+            [formData setValue:@"123456"    forKey:@"code"];
+            [request requestWithType:AsynchronousType RequestTag:Active FormData:formData Action:ActiveAction];
+        }else{//激活
+            [[[UIAlertView alloc]initWithTitle:@"温馨提示" message:@"注册成功" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles: nil] show];
+            [self goback];
+        }
+    }else//失败
+    {
+        NSString *msg = [data objectForKey:@"Msg"];
+         [[[UIAlertView alloc]initWithTitle:@"注册失败" message:msg delegate:nil cancelButtonTitle:@"确定" otherButtonTitles: nil] show];
+    }
+   
+}
+- (void)goback
+{
+    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
 }
 -(void)requestFailed:(ASIHTTPRequest *)retqust RequestTag:(NSString *)requestTag
 {

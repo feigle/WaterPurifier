@@ -199,7 +199,6 @@
 
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    CLog(@"%f",startOffet_x-scrollView.contentOffset.x);
     if (calculateEnable) {
         long long int tempOff = (startOffet_x-scrollView.contentOffset.x)*prifx;
         long long int tempTime = currentTime - tempOff;

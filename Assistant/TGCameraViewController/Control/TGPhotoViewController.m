@@ -29,6 +29,7 @@
 #import "TGCameraColor.h"
 #import "TGCameraFilterView.h"
 #import "UIImage+CameraFilters.h"
+#import "Macros.h"
 
 static NSString* const kTGCacheSatureKey = @"TGCacheSatureKey";
 static NSString* const kTGCacheCurveKey = @"TGCacheCurveKey";

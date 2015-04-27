@@ -28,7 +28,6 @@
     //获取终端设备标识，这个标识需要通过接口发送到服务器端，服务器端推送消息到APNS时需要知道终端的标识，APNS通过注册的终端标识找到终端设备。
     token = [token stringByReplacingOccurrencesOfString:@"<" withString:@""];
     token = [token stringByReplacingOccurrencesOfString:@">" withString:@""];
-    CLog(@"token:%@",token);
     token = [token stringByReplacingOccurrencesOfString:@" " withString:@""];
 
 }
@@ -36,7 +35,6 @@
 
 - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
 {
-    CLog(@"push regist fail !");
 }
 //处理收到的消息推送
 - (void)application:(UIApplication *)application
@@ -47,7 +45,6 @@ didReceiveRemoteNotification:(NSDictionary *)userInfo
     [[NSNotificationCenter defaultCenter] postNotificationName:@"flushNotification" object:nil];
     application.applicationIconBadgeNumber -= 1;
     NSDictionary *dic = [userInfo objectForKey:@"aps"];
-    CLog(@"dic----:%@",dic);
     //执行删除动作人的ID
     NSString *alertStr = [dic objectForKey:@"alert"];
 

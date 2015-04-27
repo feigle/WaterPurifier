@@ -12,7 +12,7 @@
 #import "CJSONSerializer.h"
 #import "ASIFormDataRequest.h"
 #import "GTMBase64.h"
-
+#import "Macros.h"
 #define DATA_STORE_PUBLIC_KEY       @"kPublicKey"   //Public_Key
 #define TOKEN_FOR_TEST              @"47036906 0ba688df 56df339e 68d9cfcb b4553cfc 0b130d0c 875675d1 ebdaee69"
 
@@ -100,21 +100,7 @@
 //    NSString *sessionID = [[NSUserDefaults standardUserDefaults] objectForKey:@"JSESSIONID"];
     //URL
     NSURL *URL = nil;
-    if ([requestTag isEqualToString:@"login.do"]) {//登录
-        NSString* phoneModel = [[UIDevice currentDevice] model];
-        CLog(@"手机型号: %@",phoneModel );
-        [data setValue:phoneModel forKey:@"mtype"];
-        
-        URL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@",HOST,action]];
-//        NSString *token = [[NSUserDefaults standardUserDefaults]objectForKey:@"token"];
-//        if (token.length<1) {//模拟器测试
-//            token = TOKEN_FOR_TEST;
-//        }
-//        [data setValue:token forKey:@"token"];
-    }
-    else{//非登录
-        URL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@",HOST,action]];
-    }
+   URL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@",HOST,action]];
     CLog(@"Post——requestURL :%@",URL);
     
     ASIFormDataRequest *request = [[ASIFormDataRequest alloc] initWithURL:URL];
@@ -127,11 +113,12 @@
     [self.requestArr addObject:request];
     //post表单数据
     NSArray *allKeys = [data allKeys];
+//    RSA *rsa = [[RSA alloc] init];
     for (NSString *key in allKeys) {
-//        NSData *AESData = [NSData AESEncryptWithString:[data objectForKey:key]];
-//        NSData *data64 = [GTMBase64 encodeData:AESData];
-//        NSString *AESString = [[NSString alloc]initWithData:data64 encoding:NSUTF8StringEncoding];
         NSString *values = [data objectForKey:key];
+        //RSA加密
+//        NSData *encodeData = [rsa encryptWithString:values];
+//       values =  [[NSString alloc]initWithData:encodeData encoding:NSUTF8StringEncoding];
         [request setPostValue:values forKey:key];
     }
     //请求方式

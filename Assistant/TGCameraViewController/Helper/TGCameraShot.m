@@ -63,7 +63,6 @@
             UIImage *image = [UIImage imageWithData:imageData];
 //            UIImage *croppedImage = [weakSelf cropImage:image withCropSize:cropSize];
             completion(image);
-            CLog(@"safdasfasfas");
         }
     }];
 }

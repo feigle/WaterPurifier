@@ -7,6 +7,7 @@
 //
 
 #import "ForgetPwdViewController.h"
+#import "Macros.h"
 #define fristTF 1000
 #define secondTF 1001
 #define thirdTF 1002

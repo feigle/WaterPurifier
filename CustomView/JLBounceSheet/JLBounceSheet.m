@@ -145,7 +145,6 @@
 
 -(void) tick:(CADisplayLink*) displayLink
 {
-//    CLog(@"%@", NSStringFromCGPoint(self.centerHelperView.center));
     [self  setNeedsDisplay];
 }
 

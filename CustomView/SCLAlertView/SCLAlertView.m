@@ -12,6 +12,7 @@
 #import "SCLAlertViewStyleKit.h"
 #import <AVFoundation/AVFoundation.h>
 #import "PRTween.h"
+#import "Macros.h"
 @interface SCLAlertView ()
 
 @property (nonatomic, strong) NSMutableArray *inputs;
@@ -137,7 +138,7 @@ NSTimer *durationTimer;
     if ([systemVersion floatValue] < 8.0f)
     {
         // iOS versions before 7.0 did not switch the width and height on device roration
-        if UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation])
+        if (UIInterfaceOrientationIsLandscape([[UIApplication sharedApplication] statusBarOrientation]))
         {
             CGSize ssz = sz;
             sz = CGSizeMake(ssz.height, ssz.width);

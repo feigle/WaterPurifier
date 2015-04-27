@@ -11,7 +11,7 @@
 #import "TGCamera.h"
 #import "TGCameraViewController.h"
 #import "IndicatorViewCustom.h"
-
+#import "Macros.h"
 #define NOTIFY_AND_LEAVE(X) {[self cleanup:X]; return nil;}
 #define DATA(X) [X dataUsingEncoding:NSUTF8StringEncoding]
 

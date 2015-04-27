@@ -9,6 +9,7 @@
 #import "MoreViewController.h"
 #import "CommonFunc.h"
 #import "UserInfoViewController.h"
+#import "Macros.h"
 @interface MoreViewController ()<UITableViewDataSource,UITableViewDelegate>
 {
     NSArray *cellTextArr;
