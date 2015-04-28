@@ -13,10 +13,9 @@
 #define thirdTF 1002
 #define forthTF 1003
 
-@interface ForgetPwdViewController ()<UITextFieldDelegate>
+@interface ForgetPwdViewController ()<UITextFieldDelegate,RequestManagerDelegate>
 @property (weak, nonatomic) IBOutlet UIView *contentView;
-@property (weak, nonatomic) IBOutlet UITextField *userNameTF;
-@property (weak, nonatomic) IBOutlet UITextField *codeTF;
+
 @property (weak, nonatomic) IBOutlet UITextField *intputNewPwdTF;
 @property (weak, nonatomic) IBOutlet UITextField *inputAgainTF;
 @property (weak, nonatomic) IBOutlet UIButton *summitBtn;
@@ -28,7 +27,6 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self.userNameTF performSelector:@selector(becomeFirstResponder) withObject:nil afterDelay:0.4];
     
     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName, nil]];
     
@@ -81,6 +79,45 @@
     }
     
 }
+#pragma mark --重置密码
+- (void)resetPassword
+{
+    //post:{"password":xxxxxxxxxxx,"code":xxxxxxxxx}
+    if (self.inputAgainTF.text.length<1||self.intputNewPwdTF.text.length<1) {
+        
+    }
+    RequestManager *request = [RequestManager share];
+    [request setDelegate:self];
+    
+    NSMutableDictionary* formData = [NSMutableDictionary dictionaryWithCapacity:0];
+    [formData setValue:self.inputAgainTF.text    forKey:@"password"];
+    [formData setValue:@"123456"     forKey:@"code"];
+    
+    [request requestWithType:AsynchronousType RequestTag:@"resetPwd" FormData:formData Action:@"user/resetPassword"];
+    
+}
+-(void)requestFinish:(ASIHTTPRequest *)retqust Data:(NSDictionary *)data RequestTag:(NSString *)requestTag
+{
+    if ([[data objectForKey:@"state"] boolValue]) {
+        [self showAlert:@"密码改成功！"];;
+    }else{
+        [self showAlert:@"密码修改失败！"];
+    }
+    
+}
+-(void)requestFailed:(ASIHTTPRequest *)retqust RequestTag:(NSString *)requestTag
+{
+    [self showAlert:@"网络有误，请稍后重试！"];
+}
+- (void)showAlert:(NSString*)detail
+{
+    SCLAlertView *alert = [[SCLAlertView alloc] init];
+    
+    alert.shouldDismissOnTapOutside = YES;
+    
+    [alert showInfo:self title:@"温馨提示" subTitle:detail  closeButtonTitle:@"确定" duration:3.0f];
+}
+
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [self hideKeyBorad];
@@ -89,7 +126,7 @@
 {
     switch (textField.tag) {
         case 1000:
-            [self.codeTF becomeFirstResponder];
+//            [self.codeTF becomeFirstResponder];
             break;
         case 1001:
             [self.intputNewPwdTF becomeFirstResponder];
@@ -111,18 +148,13 @@
 {
     [self scrollContentView:0];
     
-    [self.userNameTF resignFirstResponder];
-    [self.codeTF resignFirstResponder];
     [self.inputAgainTF resignFirstResponder];
     [self.intputNewPwdTF resignFirstResponder];
 }
-#pragma mark -- 获取验证码
-- (IBAction)getVerificationCode:(id)sender {
-    [self hideKeyBorad];
-}
+
 #pragma mark -- 提交
 - (IBAction)didSummitBtnClicked:(id)sender {
-    [self hideKeyBorad];
+    [self resetPassword];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -27,11 +27,16 @@
 #define largeSpace 35
 
 #define BtnSpace
+#define Logout @"logout"
+#define LogoutAction @"user/logout"
+#define GetUserInfo @"getSelfProfile"
+#define GetUserInfoAction @"user/getSelfProfile"
 
 @interface UserInfoViewController ()<TGCameraDelegate>
 {
     UIImagePickerController * picker;
     IndicatorViewCustom *indicatorView;
+    NSDictionary *userInfoDic;
 
 }
 @property (weak, nonatomic) IBOutlet UILabel *userNameLabel;
@@ -50,10 +55,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self getUserInfo];
     [[UINavigationBar appearance] setBarTintColor:ColorFromRGB(0x004a80)];
     
-    self.userNameLabel.text  = [[NSUserDefaults standardUserDefaults] objectForKey:@"userName"];
-    self.titleArr = [NSArray arrayWithObjects:@"13760170861",@"修改密码",@"注销", nil];
+    self.userNameLabel.text  = [kUD objectForKey:@"account"];
+    self.titleArr = [NSArray arrayWithObjects:@"121057750@qq.com",@"address",@"name",@"注销", nil];
     self.tableView.delegate = self;
     self.tableView.dataSource =self;
     self.tableView.backgroundColor = [UIColor whiteColor];
@@ -78,6 +84,15 @@
     [TGCamera setOption:kTGCameraOptionSaveImageToAlbum value:[NSNumber numberWithBool:YES]];
     self.headImageView.clipsToBounds = YES;
     // Do any additional setup after loading the view.
+}
+- (IBAction)EditUserInfo:(id)sender {
+    UIStoryboard *storyboard = self.storyboard;
+    UIViewController *vc = nil;
+    
+    vc.view.autoresizesSubviews = TRUE;
+    vc.view.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
+    vc = [storyboard instantiateViewControllerWithIdentifier:@"ModifyUserInfoViewController"];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 #pragma mark -- 设置头像
 - (void)setHeadViewImage
@@ -175,8 +190,8 @@
 #pragma mark -
 #pragma mark - Private methods
 
-- (IBAction)tapOnHeadImage:(id)sender {
-    [self showActionsheet];
+- (IBAction)tapOnHeadImage:(id)sender {//点击头像
+//    [self showActionsheet];
 }
 #pragma mark --修改头像按钮
 - (void)showActionsheet
@@ -227,7 +242,7 @@
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     if (section == 0)
-        return 2;
+        return [self.titleArr count]-1;
     else
         return 1;
     
@@ -262,7 +277,7 @@
         [cell addSubview:line];
         NSInteger index =  indexPath.row;
         cell.detailTextLabel.text = [self.titleArr objectAtIndex:index];
-        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+//        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     }
     
     
@@ -280,12 +295,61 @@
     UIViewController *vc = nil;
     vc.view.autoresizesSubviews = TRUE;
     vc.view.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
-     if (indexPath.section == 1){
-        [[NSNotificationCenter defaultCenter]postNotificationName:@"ToLoginVC" object:nil];
+     if (indexPath.section == 1){//注销
+         [self requestLogout];
         
     }
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
+- (void)requestLogout
+{
+    NSString *openid = [kUD objectForKey:@"openid"];
+    NSString *token = [kUD objectForKey:@"token"];
+    RequestManager *request = [RequestManager share];
+    [request setDelegate:self];
+    
+    NSMutableDictionary* formData = [NSMutableDictionary dictionaryWithCapacity:0];
+    [formData setValue:openid    forKey:@"openid"];
+    [formData setValue:token     forKey:@"token"];
+
+    [request requestWithType:AsynchronousType RequestTag:Logout FormData:formData Action:LogoutAction];
+}
+- (void)getUserInfo
+{
+    NSString *openid = [kUD objectForKey:@"openid"];
+    NSString *token = [kUD objectForKey:@"token"];
+    RequestManager *request = [RequestManager share];
+    [request setDelegate:self];
+    
+    NSMutableDictionary* formData = [NSMutableDictionary dictionaryWithCapacity:0];
+    [formData setValue:openid    forKey:@"openid"];
+    [formData setValue:token     forKey:@"token"];
+    
+    [request requestWithType:AsynchronousType RequestTag:GetUserInfo FormData:formData Action:GetUserInfoAction];
+}
+-(void)requestFinish:(ASIHTTPRequest *)retqust Data:(NSDictionary *)data RequestTag:(NSString *)requestTag
+{
+    if ([requestTag isEqualToString:@"getSelfProfile"]) {//获取用户信息
+//        if ([[data objectForKey:@"state"] boolValue]) {
+            self.titleArr  = nil;
+             self.titleArr = [NSArray arrayWithObjects:[data objectForKey:@"address"],[data objectForKey:@"name"],[data objectForKey:@"email"],@"注销", nil];
+            [self.tableView reloadData];
+//        }else{
+//            [self showAlert:@"获取用户信息失败！"];
+//        }
+    }else{//注销
+        if ([[data objectForKey:@"state"] boolValue]) {
+            [[NSNotificationCenter defaultCenter]postNotificationName:@"ToLoginVC" object:nil];
+        }else{
+            [self showAlert:@"注销失败"];
+        }
+    }
+   
+}
+-(void)requestFailed:(ASIHTTPRequest *)retqust RequestTag:(NSString *)requestTag
+{
+    [self showAlert:@"网络有误，请稍后重试！"];
 }
 - (IBAction)backup:(id)sender {
     XDKAirMenuController *menu = [XDKAirMenuController sharedMenu];
@@ -377,7 +441,14 @@
     [result appendData:DATA(formstring)];
     return result;
 }
-
+- (void)showAlert:(NSString*)detail
+{
+    SCLAlertView *alert = [[SCLAlertView alloc] init];
+    
+    alert.shouldDismissOnTapOutside = YES;
+    
+    [alert showInfo:self title:@"温馨提示" subTitle:detail  closeButtonTitle:@"确定" duration:3.0f];
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

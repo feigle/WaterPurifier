@@ -12,6 +12,7 @@
 		004245041AE0088D0058A1B0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 004245031AE0088D0058A1B0 /* main.m */; };
 		004245081AE009230058A1B0 /* WaterPurifierTests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 004245071AE009230058A1B0 /* WaterPurifierTests-Info.plist */; };
 		0042450B1AE0092F0058A1B0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 004245091AE0092F0058A1B0 /* InfoPlist.strings */; };
+		004D967B1AEFC41700A1AB9F /* ModifyUserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 004D967A1AEFC41700A1AB9F /* ModifyUserInfoViewController.m */; };
 		0052C2011AE006E0008DE355 /* AlbumViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0052C1E01AE006E0008DE355 /* AlbumViewController.m */; };
 		0052C2031AE006E0008DE355 /* FeedBackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0052C1E41AE006E0008DE355 /* FeedBackViewController.m */; };
 		0052C2041AE006E0008DE355 /* ForgetPwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0052C1E61AE006E0008DE355 /* ForgetPwdViewController.m */; };
@@ -331,6 +332,8 @@
 		004245031AE0088D0058A1B0 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = WaterPurifier/main.m; sourceTree = SOURCE_ROOT; };
 		004245071AE009230058A1B0 /* WaterPurifierTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "WaterPurifierTests-Info.plist"; path = "WaterPurifierTests/WaterPurifierTests-Info.plist"; sourceTree = SOURCE_ROOT; };
 		0042450A1AE0092F0058A1B0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = WaterPurifierTests/en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
+		004D96791AEFC41700A1AB9F /* ModifyUserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ModifyUserInfoViewController.h; sourceTree = "<group>"; };
+		004D967A1AEFC41700A1AB9F /* ModifyUserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ModifyUserInfoViewController.m; sourceTree = "<group>"; };
 		0052C1DF1AE006E0008DE355 /* AlbumViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AlbumViewController.h; sourceTree = "<group>"; };
 		0052C1E01AE006E0008DE355 /* AlbumViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AlbumViewController.m; sourceTree = "<group>"; };
 		0052C1E31AE006E0008DE355 /* FeedBackViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FeedBackViewController.h; sourceTree = "<group>"; };
@@ -824,6 +827,8 @@
 				0052C1FB1AE006E0008DE355 /* UserInfoTableView.m */,
 				0052C1FC1AE006E0008DE355 /* UserInfoViewController.h */,
 				0052C1FD1AE006E0008DE355 /* UserInfoViewController.m */,
+				004D96791AEFC41700A1AB9F /* ModifyUserInfoViewController.h */,
+				004D967A1AEFC41700A1AB9F /* ModifyUserInfoViewController.m */,
 				0052C1FE1AE006E0008DE355 /* ViewController.h */,
 				0052C1FF1AE006E0008DE355 /* ViewController.m */,
 			);
@@ -2019,6 +2024,7 @@
 				A43528701A7721F100F4F65C /* rc4_skey.c in Sources */,
 				A4A220671ABBB0830093272F /* PRTween.m in Sources */,
 				A43528691A7721F100F4F65C /* NSObject+SBJSON.m in Sources */,
+				004D967B1AEFC41700A1AB9F /* ModifyUserInfoViewController.m in Sources */,
 				A4A2205B1ABBB05E0093272F /* TimeControlView.m in Sources */,
 				A47822551A88B294008B9111 /* TGCameraShot.m in Sources */,
 				0052C2051AE006E0008DE355 /* LoginViewController.m in Sources */,

@@ -160,7 +160,7 @@
             [request requestWithType:AsynchronousType RequestTag:Active FormData:formData Action:ActiveAction];
         }else{//激活
             [[[UIAlertView alloc]initWithTitle:@"温馨提示" message:@"注册成功" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles: nil] show];
-            [self goback];
+            [self performSelector:@selector(goBack) withObject:nil afterDelay:3];
         }
     }else//失败
     {
@@ -171,7 +171,7 @@
 }
 - (void)goback
 {
-    [self.navigationController dismissViewControllerAnimated:YES completion:nil];
+    [self.navigationController popViewControllerAnimated:YES];
 }
 -(void)requestFailed:(ASIHTTPRequest *)retqust RequestTag:(NSString *)requestTag
 {

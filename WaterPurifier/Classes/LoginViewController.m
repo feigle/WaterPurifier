@@ -88,11 +88,11 @@
     [XDKAirMenuController sharedMenu].moveEnable = NO;
     self.scrollView.contentSize = CGSizeMake(MRScreenWidth, MRScreenHeight);
     self.scrollView.scrollEnabled = NO;
-    self.userNameTF.text = @"ckh";
+    self.userNameTF.text = @"13824473816";
     if (isRecord)
         self.PwdTF.text = @"test";
     else
-        self.PwdTF.text = nil;
+        self.PwdTF.text = @"test";
     
     self.userNameTF.delegate = self;
     self.PwdTF.delegate = self;
@@ -159,6 +159,7 @@
     if ([[data objectForKey:@"state"] boolValue]) {
         NSString *openid = [data objectForKey:@"openid"];
         NSString *token = [data objectForKey:@"token"];
+        NSLog(@"----openid:%@,token:%@",openid,token);
 ////        保存用户信息
 //        NSString *uid = [infoDic objectForKey:@"id"];
 //

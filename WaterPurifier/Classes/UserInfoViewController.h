@@ -8,7 +8,8 @@
 
 #import <UIKit/UIKit.h>
 #import "UserInfoTableView.h"
-@interface UserInfoViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIActionSheetDelegate>
+
+@interface UserInfoViewController : UIViewController<UITableViewDelegate,UITableViewDataSource,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UIActionSheetDelegate,RequestManagerDelegate>
 @property (weak, nonatomic) IBOutlet UserInfoTableView *tableView;
 
 @end

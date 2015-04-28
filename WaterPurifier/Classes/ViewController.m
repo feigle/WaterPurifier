@@ -122,7 +122,7 @@
             UILabel *NameLabel = [[UILabel alloc]initWithFrame:CGRectMake((MRScreenWidth-150)/2, 100+50, 100, 30)];
             NameLabel.textAlignment = NSTextAlignmentCenter;
             NameLabel.font = [UIFont systemFontOfSize:14];
-            NameLabel.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"userName"];
+            NameLabel.text = [kUD objectForKey:@"account"];
             NameLabel.textColor = [UIColor whiteColor];
             [cell addSubview:NameLabel];
         }else if (indexPath.row == 5){
