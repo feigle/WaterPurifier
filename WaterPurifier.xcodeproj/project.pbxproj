@@ -18,7 +18,7 @@
 		0052C2041AE006E0008DE355 /* ForgetPwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0052C1E61AE006E0008DE355 /* ForgetPwdViewController.m */; };
 		0052C2051AE006E0008DE355 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0052C1E81AE006E0008DE355 /* LoginViewController.m */; };
 		0052C2061AE006E0008DE355 /* MessageDetailViewcontroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 0052C1EA1AE006E0008DE355 /* MessageDetailViewcontroller.m */; };
-		0052C2071AE006E0008DE355 /* MessagesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0052C1EC1AE006E0008DE355 /* MessagesViewController.m */; };
+		0052C2071AE006E0008DE355 /* DevicesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0052C1EC1AE006E0008DE355 /* DevicesViewController.m */; };
 		0052C2081AE006E0008DE355 /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0052C1EE1AE006E0008DE355 /* MoreViewController.m */; };
 		0052C20A1AE006E0008DE355 /* MyDeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0052C1F21AE006E0008DE355 /* MyDeviceViewController.m */; };
 		0052C20E1AE006E0008DE355 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0052C1F91AE006E0008DE355 /* RegisterViewController.m */; };
@@ -35,6 +35,7 @@
 		0052C2321AE007AA008DE355 /* STDbHandle.m in Sources */ = {isa = PBXBuildFile; fileRef = 0052C2291AE007AA008DE355 /* STDbHandle.m */; };
 		0052C2331AE007AA008DE355 /* STDbObject.m in Sources */ = {isa = PBXBuildFile; fileRef = 0052C22C1AE007AA008DE355 /* STDbObject.m */; };
 		0052C2361AE00844008DE355 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0052C2341AE00844008DE355 /* Main.storyboard */; };
+		00729A381AF1273300E810B0 /* testData副本.txt in Resources */ = {isa = PBXBuildFile; fileRef = 00729A371AF1273300E810B0 /* testData副本.txt */; };
 		A41D64561AA9A330006AD79D /* RMDisplayLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = A41D64531AA9A330006AD79D /* RMDisplayLabel.m */; };
 		A41D64571AA9A331006AD79D /* RMDownloadIndicator.m in Sources */ = {isa = PBXBuildFile; fileRef = A41D64551AA9A330006AD79D /* RMDownloadIndicator.m */; };
 		A41D645A1AA9A3B4006AD79D /* IndicatorViewCustom.m in Sources */ = {isa = PBXBuildFile; fileRef = A41D64591AA9A3B4006AD79D /* IndicatorViewCustom.m */; };
@@ -344,8 +345,8 @@
 		0052C1E81AE006E0008DE355 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		0052C1E91AE006E0008DE355 /* MessageDetailViewcontroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageDetailViewcontroller.h; sourceTree = "<group>"; };
 		0052C1EA1AE006E0008DE355 /* MessageDetailViewcontroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageDetailViewcontroller.m; sourceTree = "<group>"; };
-		0052C1EB1AE006E0008DE355 /* MessagesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessagesViewController.h; sourceTree = "<group>"; };
-		0052C1EC1AE006E0008DE355 /* MessagesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessagesViewController.m; sourceTree = "<group>"; };
+		0052C1EB1AE006E0008DE355 /* DevicesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DevicesViewController.h; sourceTree = "<group>"; };
+		0052C1EC1AE006E0008DE355 /* DevicesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DevicesViewController.m; sourceTree = "<group>"; };
 		0052C1ED1AE006E0008DE355 /* MoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreViewController.h; sourceTree = "<group>"; };
 		0052C1EE1AE006E0008DE355 /* MoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreViewController.m; sourceTree = "<group>"; };
 		0052C1F11AE006E0008DE355 /* MyDeviceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDeviceViewController.h; sourceTree = "<group>"; };
@@ -378,6 +379,7 @@
 		0052C22C1AE007AA008DE355 /* STDbObject.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = STDbObject.m; sourceTree = "<group>"; };
 		0052C22D1AE007AA008DE355 /* STDbVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = STDbVersion.h; sourceTree = "<group>"; };
 		0052C2351AE00844008DE355 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = WaterPurifier/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
+		00729A371AF1273300E810B0 /* testData副本.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "testData副本.txt"; sourceTree = "<group>"; };
 		A41D64521AA9A330006AD79D /* RMDisplayLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMDisplayLabel.h; sourceTree = "<group>"; };
 		A41D64531AA9A330006AD79D /* RMDisplayLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RMDisplayLabel.m; sourceTree = "<group>"; };
 		A41D64541AA9A330006AD79D /* RMDownloadIndicator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RMDownloadIndicator.h; sourceTree = "<group>"; };
@@ -815,8 +817,8 @@
 				0052C1E81AE006E0008DE355 /* LoginViewController.m */,
 				0052C1E91AE006E0008DE355 /* MessageDetailViewcontroller.h */,
 				0052C1EA1AE006E0008DE355 /* MessageDetailViewcontroller.m */,
-				0052C1EB1AE006E0008DE355 /* MessagesViewController.h */,
-				0052C1EC1AE006E0008DE355 /* MessagesViewController.m */,
+				0052C1EB1AE006E0008DE355 /* DevicesViewController.h */,
+				0052C1EC1AE006E0008DE355 /* DevicesViewController.m */,
 				0052C1ED1AE006E0008DE355 /* MoreViewController.h */,
 				0052C1EE1AE006E0008DE355 /* MoreViewController.m */,
 				0052C1F11AE006E0008DE355 /* MyDeviceViewController.h */,
@@ -831,6 +833,7 @@
 				004D967A1AEFC41700A1AB9F /* ModifyUserInfoViewController.m */,
 				0052C1FE1AE006E0008DE355 /* ViewController.h */,
 				0052C1FF1AE006E0008DE355 /* ViewController.m */,
+				00729A371AF1273300E810B0 /* testData副本.txt */,
 			);
 			name = Classes;
 			path = WaterPurifier/Classes;
@@ -1883,6 +1886,7 @@
 				A47291741AAE87B200AC4A38 /* CameraFlashOn.png in Resources */,
 				A443515A1A7B1A13006ADDAC /* stop.png in Resources */,
 				A4B0DD941A7A3568002F663F /* headDemo.png in Resources */,
+				00729A381AF1273300E810B0 /* testData副本.txt in Resources */,
 				0052C2361AE00844008DE355 /* Main.storyboard in Resources */,
 				A47822611A88B294008B9111 /* TGPhotoViewController.xib in Resources */,
 				0042450B1AE0092F0058A1B0 /* InfoPlist.strings in Resources */,
@@ -1968,7 +1972,7 @@
 				A47822061A88931E008B9111 /* UIScrollView+MJRefresh.m in Sources */,
 				0052C20A1AE006E0008DE355 /* MyDeviceViewController.m in Sources */,
 				A4A2204C1ABBB04A0093272F /* RequestManager.m in Sources */,
-				0052C2071AE006E0008DE355 /* MessagesViewController.m in Sources */,
+				0052C2071AE006E0008DE355 /* DevicesViewController.m in Sources */,
 				A47821EA1A888396008B9111 /* SCLAlertView.m in Sources */,
 				A47822571A88B294008B9111 /* TGAssetImageFile.m in Sources */,
 				A478224E1A88B294008B9111 /* TGAlbum.m in Sources */,

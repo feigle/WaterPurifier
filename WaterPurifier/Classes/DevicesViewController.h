@@ -1,5 +1,5 @@
 //
-//  MessagesViewController.h
+//  DevicesViewControlle.h
 //  WaterPurifier
 //
 //  Created by bjdz on 15-1-22.
@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MessagesViewController : UIViewController
-
+@interface DevicesViewController : UIViewController
+{
+    NSArray *deviceArray;
+}
 @end

@@ -25,23 +25,6 @@
             </objects>
             <point key="canvasLocation" x="-1627" y="-1053"/>
         </scene>
-        <!--主页-->
-        <scene sceneID="O9Q-Dl-6aD">
-            <objects>
-                <navigationController storyboardIdentifier="MydevNC" id="DCI-vE-HuH" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="主页" id="1Q9-zi-EzU"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cVd-Ra-GRO">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="yCZ-oL-sbk" kind="relationship" relationship="rootViewController" id="OQR-sH-ktV"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rOw-mv-veQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-586" y="-1920"/>
-        </scene>
         <!--消息详情-->
         <scene sceneID="Lbt-RA-K5j">
             <objects>
@@ -56,7 +39,7 @@
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="14" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="k4c-9m-wNt">
                                         <rect key="frame" x="8" y="0.0" width="304" height="156"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
@@ -117,10 +100,10 @@
             </objects>
             <point key="canvasLocation" x="-121" y="-635"/>
         </scene>
-        <!--消息-->
+        <!--设备-->
         <scene sceneID="0yk-AS-QLv">
             <objects>
-                <navigationController storyboardIdentifier="MessNC" title="消息" automaticallyAdjustsScrollViewInsets="NO" id="EBK-ye-hdl" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="DevicesNC" title="设备" automaticallyAdjustsScrollViewInsets="NO" id="EBK-ye-hdl" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="设备" id="DQW-yf-I6x"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="hwd-1n-AUT">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -134,21 +117,126 @@
             </objects>
             <point key="canvasLocation" x="-586" y="-1265"/>
         </scene>
-        <!--消息-->
+        <!--设备-->
         <scene sceneID="zvv-ok-tSu">
             <objects>
-                <viewController storyboardIdentifier="MessagesViewController" title="消息" id="Jqi-26-BbG" customClass="MessagesViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DevicesViewController" title="设备" id="Jqi-26-BbG" customClass="DevicesViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Pmg-3L-qSg">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="erP-j6-eRc">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" heightSizable="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                            </tableView>
+                            <view contentMode="scaleToFill" id="myH-BH-DMy">
+                                <rect key="frame" x="0.0" y="64" width="160" height="174"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="238" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="My1-wE-T2z">
+                                        <rect key="frame" x="0.0" y="42" width="133" height="89"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="55"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="净化前水质：较少" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="HcU-Ob-8qz">
+                                        <rect key="frame" x="16" y="131" width="144" height="43"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TDS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="imF-6M-DaD">
+                                        <rect key="frame" x="118" y="102" width="42" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.33003476510000002" green="0.67972695709999997" blue="0.1399426919" alpha="1" colorSpace="calibratedRGB"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="5l7-cJ-xP6">
+                                <rect key="frame" x="160" y="64" width="160" height="174"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="238" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Hp6-R7-0SU">
+                                        <rect key="frame" x="0.0" y="42" width="133" height="89"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="55"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="净化前水质：较好" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="WoB-LZ-2GY" userLabel="净化后水质：较少">
+                                        <rect key="frame" x="16" y="131" width="144" height="43"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TDS" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="kcL-fp-hl7">
+                                        <rect key="frame" x="118" y="102" width="42" height="21"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="y5r-s0-cta">
+                                <rect key="frame" x="0.0" y="450" width="160" height="78"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="已过滤自来水" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="goJ-4P-e66">
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="29"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="43L" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YNZ-ai-o46">
+                                        <rect key="frame" x="0.0" y="33" width="160" height="45"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
+                            <view contentMode="scaleToFill" id="gwY-Zi-fz5">
+                                <rect key="frame" x="160" y="450" width="160" height="78"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="点击查看" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Tny-0O-0L4">
+                                        <rect key="frame" x="85" y="0.0" width="75" height="26"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="更多水质" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Hlf-Kj-JNT">
+                                        <rect key="frame" x="0.0" y="27" width="160" height="51"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="wuB-tf-X4W">
+                                        <rect key="frame" x="0.0" y="0.0" width="160" height="78"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="moreWaterButtonClick:" destination="Jqi-26-BbG" eventType="touchUpInside" id="1Md-Et-69q"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.39771637139363947" green="0.54081836726833354" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="设备" id="hgZ-XV-umD">
                         <barButtonItem key="leftBarButtonItem" image="menu.png" id="Ff7-IH-65P">
@@ -159,7 +247,11 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="tableView" destination="erP-j6-eRc" id="kWU-KE-Yby"/>
+                        <outlet property="TDS1Value" destination="My1-wE-T2z" id="b4W-dO-LOq"/>
+                        <outlet property="TDS2Value" destination="Hp6-R7-0SU" id="1Gc-7X-kmA"/>
+                        <outlet property="after" destination="WoB-LZ-2GY" id="2NN-L9-Iko"/>
+                        <outlet property="before" destination="HcU-Ob-8qz" id="9NY-me-Sp9"/>
+                        <outlet property="totalWater" destination="YNZ-ai-o46" id="XRo-jA-kLm"/>
                         <segue destination="cuA-BS-mTZ" kind="push" id="fSy-gF-etE"/>
                     </connections>
                 </viewController>
@@ -198,27 +290,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hFd-LV-noA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-146" y="-1920"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="9vi-fK-oAp">
-            <objects>
-                <tabBarController storyboardIdentifier="TabBarController" id="iXJ-yJ-B8c" sceneMemberID="viewController">
-                    <nil key="simulatedBottomBarMetrics"/>
-                    <tabBar key="tabBar" contentMode="scaleToFill" id="vOp-23-Hlv">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="DCI-vE-HuH" kind="relationship" relationship="viewControllers" id="rKM-PQ-Smu"/>
-                        <segue destination="EBK-ye-hdl" kind="relationship" relationship="viewControllers" id="sBi-WT-mD1"/>
-                        <segue destination="5Xi-FF-95U" kind="relationship" relationship="viewControllers" id="cS3-DX-oQO"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="aGT-cY-T65" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1141" y="-1053"/>
         </scene>
         <!--登录NC-->
         <scene sceneID="EPK-jV-9kp">
@@ -568,7 +639,6 @@
         <!--忘记密码-->
         <scene sceneID="b85-eE-Wnv">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Ept-ac-TUY" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="ForgetPwdVC" title="忘记密码" id="INc-gX-dIA" customClass="ForgetPwdViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Usv-XR-8MU">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -634,6 +704,7 @@
                         <outlet property="summitBtn" destination="NUp-Et-oaQ" id="iS7-YJ-jn7"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ept-ac-TUY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1207" y="828"/>
         </scene>

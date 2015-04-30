@@ -147,7 +147,6 @@
     NSMutableDictionary* formData = [NSMutableDictionary dictionaryWithCapacity:0];
     [formData setValue:self.userNameTF.text    forKey:@"account"];
     [formData setValue:self.PwdTF.text      forKey:@"password"];
-//    [formData setValue:@"8a6d98d6a0b3f55a45d0dd72b07b332eb741871d7f77dedf2e320042977a1939" forKey:@"token"];
     [request requestWithType:AsynchronousType RequestTag:LOGIN FormData:formData Action:LOGIN_ACTION];
 }
 -(void)request:(ASIHTTPRequest *)request didReceiveResponseHeaders:(NSDictionary *)responseHeaders RequestTag:(NSString *)requestTag

@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface MessageDetailViewcontroller : UIViewController
-
+@property (nonatomic,retain)NSDictionary *infoDic;
 @end

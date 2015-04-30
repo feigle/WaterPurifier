@@ -69,8 +69,8 @@
     bacImage.image = [UIImage imageNamed:@"userInfoBG"];
     [self.view addSubview:bacImage];
     
-    arr = [NSArray arrayWithObjects:@"主页",@"更多",@"注销", nil];
-    imgArr = [NSArray arrayWithObjects:@"iconDev",@"iconDev",@"iconDev",@"iconMore", nil];
+    arr = [NSArray arrayWithObjects:@"主页",@"密码重置",@"帮助",@"关于我们",@"待机", nil];
+    imgArr = [NSArray arrayWithObjects:@"iconDev",@"iconDev",@"iconDev",@"iconMore",@"iconDev", nil];
     self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, MRScreenHeight, MRScreenHeight)];
     self.tableView.dataSource = self;
     self.tableView.backgroundColor = [UIColor clearColor];
@@ -92,7 +92,7 @@
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 4;
+    return [arr count]+1;
 }
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -125,7 +125,6 @@
             NameLabel.text = [kUD objectForKey:@"account"];
             NameLabel.textColor = [UIColor whiteColor];
             [cell addSubview:NameLabel];
-        }else if (indexPath.row == 5){
         }
         else{
             CGFloat cell_w = cell.frame.size.width;
@@ -198,7 +197,7 @@
         vc = [storyboard instantiateViewControllerWithIdentifier:@"userInfoRootVC"];
     
     else if (indexPath.row == 1)
-        vc = [storyboard instantiateViewControllerWithIdentifier:@"TabBarController"];
+        vc = [storyboard instantiateViewControllerWithIdentifier:@"DevicesNC"];
     else if (indexPath.row == 2){
         vc = [storyboard instantiateViewControllerWithIdentifier:@"moreNV"];
     }else{

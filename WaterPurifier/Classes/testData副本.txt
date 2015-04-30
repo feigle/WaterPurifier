@@ -1,0 +1,1 @@
+{"Msg":"","devices":[{"gid":1,"active":true,"water":0,"mac":"3C0754231108","filter":[{"worktime":0,"lifetime":500},{"worktime":0,"lifetime":500},{"worktime":0,"lifetime":500},{"worktime":0,"lifetime":500}],"uid":2,"tds1":0,"tds2":0,"id":1,"time":0,"protect":false,"open":false,"status":false}],"state":true}

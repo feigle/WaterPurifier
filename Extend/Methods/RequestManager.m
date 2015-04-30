@@ -186,9 +186,18 @@
         returnDic = [[String JSONValue]copy];
     }else{
         NSString *String = [[NSString alloc] initWithData: responseData encoding: NSUTF8StringEncoding];
+        if ([request.requestTag isEqualToString:@"getSelfDevice"]) {
+            NSString*filePath=[[NSBundle mainBundle] pathForResource:@"testData副本"ofType:@"txt"];
+            NSData *data = [NSData dataWithContentsOfFile:filePath];
+           String = [[NSString alloc] initWithData: data encoding: NSUTF8StringEncoding];
+
+            
+        }
+        NSLog(@"\n\nrequest.url---****---->%@\n\n",request.url);
+        NSLog(@"\n\nString-----*******-------->%@\n\n",String);
         returnDic = [[String JSONValue]copy];
     }
-    
+
     if(_delegate && [_delegate respondsToSelector: @selector(requestFinish:Data:RequestTag:)])
     {
         [_delegate requestFinish:request Data:returnDic RequestTag:request.requestTag];

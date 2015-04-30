@@ -28,9 +28,14 @@
     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName, nil]];
     self.title = @"设备";
     self.textLabel.text = @"In a storyboard-based application, you will often want to do a little preparation before navigation";
+    [self initData];
     // Do any additional setup after loading the view.
 }
-
+- (void)initData
+{
+//    [self.infoDic objectForKey:@""];
+   
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
