@@ -327,7 +327,7 @@
     if (!_isMenuOpened) {
         [self.airDelegate menuWillOpen];
     }
-    self.currentViewController.view.userInteractionEnabled = NO;
+//    self.currentViewController.view.userInteractionEnabled = NO;
     [UIView animateWithDuration:0.3f animations:^{
         
         self.currentViewController.view.transform = CGAffineTransformMakeScale(self.minScaleController, self.minScaleController);

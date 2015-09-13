@@ -16,7 +16,6 @@
 //    //推送
 //    [[UIApplication sharedApplication] registerForRemoteNotificationTypes:UIRemoteNotificationTypeSound|UIRemoteNotificationTypeAlert|UIRemoteNotificationTypeBadge];
     
-
     
     // Override point for customization after application launch.
     return YES;

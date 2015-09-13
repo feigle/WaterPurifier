@@ -7,16 +7,9 @@
 //
 #import "Macros.h"
 #import "DevicesViewController.h"
+#import "IndicatorViewCustom.h"
+#import "FilterViewcontroller.h"
 
-#import "MessageDetailViewcontroller.h"
-#define cell_h 60
-#define cellSpace 30
-#define camaraLabel_tag 5554
-#define titleLabel_tag 5555
-#define weekLabel_tag 5556
-#define detailLabel_tag 5557
-#define pointImg_tag 3243
-#define line_tag 65567
 #define RTag @"getSelfDevice"
 #define RAction @"user/getSelfDevice"
 @interface DevicesViewController ()<UIActionSheetDelegate,RequestManagerDelegate>
@@ -26,6 +19,9 @@
 @property (weak, nonatomic) IBOutlet UILabel *TDS2Value;
 @property (weak, nonatomic) IBOutlet UILabel *after;
 @property (weak, nonatomic) IBOutlet UILabel *totalWater;
+
+@property (weak, nonatomic) IBOutlet UIView *TDS1Content;
+@property (weak, nonatomic) IBOutlet UISwitch *switchBtn;
 
 @end
 
@@ -42,6 +38,13 @@
     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName, nil]];
     
     
+    //加载圆圈
+    IndicatorViewCustom * indicatorView = [[IndicatorViewCustom alloc]init];
+    indicatorView.frame = CGRectMake(0, 0, 320/3,self.view.frame.size.width/3);
+    indicatorView.center = CGPointMake(MRScreenWidth/4, CGRectGetMaxY(self.TDS1Content.frame)+MRScreenWidth/4);
+    [self.view addSubview:indicatorView];
+    indicatorView.downloadedBytes = 99;
+    [indicatorView startAnimation:1.5];
     
 }
 
@@ -62,15 +65,32 @@
 
 
 - (IBAction)moreWaterButtonClick:(id)sender {
+    NSDictionary *infoDic = [deviceArray objectAtIndex:0];
+    NSArray *arr = [infoDic objectForKey:@"filter"];
     
     UIStoryboard *storyboard = self.storyboard;
-    MessageDetailViewcontroller*vc = nil;
+    FilterViewcontroller*vc = nil;
     vc.view.autoresizesSubviews = TRUE;
     vc.view.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
-    vc = [storyboard instantiateViewControllerWithIdentifier:@"MessageDetailViewcontroller"];
+    vc = [storyboard instantiateViewControllerWithIdentifier:@"FilterViewcontroller"];
     vc.tabBarController.view.hidden = YES;
-    vc.infoDic = [deviceArray objectAtIndex:0];
+    vc.infoArr =arr;
     [self.navigationController pushViewController:vc animated:YES];
+}
+#pragma mark --开关
+- (IBAction)switchOnClick:(id)sender {
+    NSString *openid = [kUD objectForKey:@"openid"];
+    NSString *token = [kUD objectForKey:@"token"];
+    RequestManager *request = [RequestManager share];
+    [request setDelegate:self];
+    
+    NSMutableDictionary* formData = [NSMutableDictionary dictionaryWithCapacity:0];
+    [formData setValue:openid    forKey:@"openid"];
+    [formData setValue:token     forKey:@"token"];
+    NSString *devId = [kUD objectForKey:@"id"];
+     [formData setValue:devId     forKey:@"did"];//设备id
+    [request requestWithType:AsynchronousType RequestTag:@"toggleOpen" FormData:formData Action:@"user/toggleOpen"];
+    
 }
 
 #pragma mark --请求设备信息
@@ -91,10 +111,19 @@
 -(void)requestFinish:(ASIHTTPRequest *)retqust Data:(NSDictionary *)data RequestTag:(NSString *)requestTag
 {
     if ([[data objectForKey:@"state"] boolValue]) {
-        [self initDataModle:data];
-        
+        if ([requestTag isEqualToString:RTag]) {//获取用户信息
+            [self initDataModle:data];
+        }else{
+            [self showAlert:@"操作成功！"];
+        }
     }else{
-        [self showAlert:@"获取设备信息失败！"];
+        if ([requestTag isEqualToString:RTag]) {//获取用户信息
+            [self showAlert:@"获取设备信息失败！"];
+        }else{
+            [self showAlert:@"操作失败！"];
+            [self.switchBtn setSelected:NO];
+        }
+        
     }
 }
 #pragma mark --建立数据模型
@@ -111,6 +140,10 @@
 //        self.before.text = [NSString stringWithFormat:@"%@",[infoDic objectForKey:@""]];
 //        self.after.text = [NSString stringWithFormat:@"%@",[infoDic objectForKey:@""]];
         self.totalWater.text = [NSString stringWithFormat:@"%@",[infoDic objectForKey:@"water"]];
+        NSString *devId = [NSString stringWithFormat:@"%@",[infoDic objectForKey:@"id"]];
+        [kUD setValue:devId forKey:@"id"];
+         NSString *mac = [infoDic objectForKey:@"mac"];
+        [kUD setValue:mac forKey:@"mac"];
     }
 }
 #pragma mark --初始化tableview

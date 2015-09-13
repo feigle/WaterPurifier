@@ -42,16 +42,17 @@
     NSMutableDictionary* formData = [NSMutableDictionary dictionaryWithCapacity:0];
     [formData setValue:openid   forKey:@"openid"];
     [formData setValue:token      forKey:@"token"];
-    [formData setValue:@"address"      forKey:@"address"];
-    [formData setValue:@"123213@qq.com"      forKey:@"email"];
-    [formData setValue:@"Joblee"      forKey:@"name"];
+    [formData setValue:self.addressTF.text      forKey:@"address"];
+    [formData setValue:self.emailTF.text      forKey:@"email"];
+    [formData setValue:self.nameTF.text     forKey:@"name"];
 
     [request requestWithType:AsynchronousType RequestTag:Tag FormData:formData Action:RAction];
 }
 -(void)requestFinish:(ASIHTTPRequest *)retqust Data:(NSDictionary *)data RequestTag:(NSString *)requestTag
 {
     if ([[data objectForKey:@"state"] boolValue]) {
-       [self showAlert:@"用户信息修改成功！"];;
+       [self showAlert:@"用户信息修改成功！"];
+        [self.navigationController popViewControllerAnimated:YES];
     }else{
         [self showAlert:@"用户信息修改失败！"];
     }
@@ -59,7 +60,6 @@
 }
 -(void)requestFailed:(ASIHTTPRequest *)retqust RequestTag:(NSString *)requestTag
 {
-    [self showAlert:@"网络有误，请稍后重试！"];
 }
 - (void)showAlert:(NSString*)detail
 {

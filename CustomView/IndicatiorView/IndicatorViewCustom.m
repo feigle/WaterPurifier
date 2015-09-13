@@ -12,7 +12,6 @@
 //圆圈
 @property (retain, nonatomic) RMDownloadIndicator *closedIndicator;
 
-@property (assign, nonatomic)CGFloat downloadedBytes;
 @end
 
 @implementation IndicatorViewCustom
@@ -25,15 +24,15 @@
     //添加动画视图
     [self addDownloadIndicators];
     //一次完成
-//    [self updateViewOneTime:dur];
+    [self updateViewOneTime:dur];
     //分多次加载
-    [self updateViewTimes];
+//    [self updateViewTimes];
 }
 - (void)addDownloadIndicators
 {
     [_closedIndicator removeFromSuperview];
     _closedIndicator = nil;
-    //    [_filledIndicator removeFromSuperview];
+//        [_filledIndicator removeFromSuperview];
     //    _filledIndicator = nil;
     //    [_mixedIndicator removeFromSuperview];
     //    _mixedIndicator = nil;
@@ -82,7 +81,7 @@
     //    [_filledIndicator setIndicatorAnimationDuration:1.0];
     //    [_mixedIndicator setIndicatorAnimationDuration:1.0];
     
-    [_closedIndicator updateWithTotalBytes:100 downloadedBytes:100];
+    [_closedIndicator updateWithTotalBytes:100 downloadedBytes:self.downloadedBytes];
     //    [_filledIndicator updateWithTotalBytes:100 downloadedBytes:self.downloadedBytes];
     //    [_mixedIndicator updateWithTotalBytes:100 downloadedBytes:self.downloadedBytes];
 }

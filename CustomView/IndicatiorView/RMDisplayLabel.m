@@ -41,7 +41,7 @@
     self.toValue = floor((value * 100));
     self.fromValue = [self.text floatValue];
     
-    self.countTimer = [NSTimer scheduledTimerWithTimeInterval:0.04 target:self selector:@selector(addUpTimer) userInfo:nil repeats:YES];
+    self.countTimer = [NSTimer scheduledTimerWithTimeInterval:0.01 target:self selector:@selector(addUpTimer) userInfo:nil repeats:YES];
     
     // Change the text
     self.text = [NSString stringWithFormat:@"%i",(int)(value * 100)];
@@ -51,13 +51,13 @@
     
     self.fromValue++;
     
-    if((int)self.fromValue > (int)self.toValue)
+    if((int)self.fromValue >= (int)self.toValue)
     {
         [self.countTimer invalidate];
         self.countTimer = nil;
     }
         
-    self.text = [NSString stringWithFormat:@"%d", (int)self.fromValue];
+    self.text = [NSString stringWithFormat:@"%d%@", (int)self.fromValue,@"%"];
     
 }
 

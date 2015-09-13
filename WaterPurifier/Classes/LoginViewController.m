@@ -11,13 +11,20 @@
 #import "Macros.h"
 #import "user.h"
 #import "Device.h"
+
+#import "MADeviceManager.h"
+#import "MADevice.h"
+
 #define LOGIN @"login"
 #define LOGIN_ACTION    @"user/login"
-@interface LoginViewController ()<UITextFieldDelegate,UIScrollViewDelegate,RequestManagerDelegate>
+@interface LoginViewController ()<UITextFieldDelegate,UIScrollViewDelegate,RequestManagerDelegate, MADeviceManagerDelegate>
 {
     RequestManager *request;
     BOOL isRecord;
     BOOL isAutoLogin;
+    
+    // 连接设备
+    MADevice *monitorDevice;
 }
 @property (weak, nonatomic) IBOutlet UITextField *userNameTF;
 @property (weak, nonatomic) IBOutlet UITextField *PwdTF;
@@ -34,11 +41,61 @@
 @end
 
 @implementation LoginViewController
+
+
+- (IBAction)setWIFI:(id)sender
+{
+    
+}
+
+- (IBAction)cancelWifiSetting:(UIStoryboardSegue *)sender
+{
+    
+}
+
+- (IBAction)scan:(id)sender
+{
+    [monitorDevice endDevice];
+    MADeviceManager *deviceManager = [MADeviceManager shareInstance];
+    deviceManager.delegate = self;
+    [deviceManager scan];
+}
+
+- (void)deviceManager:(MADeviceManager *)deviceManager didDiscoveredDevice:(MADevice *)device
+{
+    monitorDevice = device;
+    [monitorDevice startDevice];
+}
+
+- (IBAction)sendCmd:(id)sender
+{
+    if (monitorDevice.mode == COMMAND_MODE) {
+        [monitorDevice sendCommandToDevice:@""];
+    }else {
+        [monitorDevice sendTransString:@""];
+    }
+}
+
+- (IBAction)enterCommandMode:(id)sender
+{
+    if (monitorDevice) {
+        [monitorDevice enterCommandMode];
+    }
+}
+
+- (IBAction)enterTransMode:(id)sender
+{
+    if (monitorDevice) {
+        [monitorDevice enterTransMode];
+    }
+}
+
 -(void)viewWillAppear:(BOOL)animated
 {
     [self.view setUserInteractionEnabled:YES];
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(hideNavingationController) name:@"hideNavingationController" object:nil];
     [self hideNavingationController];
+    self.navigationController.navigationBarHidden = YES;
     
 }
 - (void)hideNVC

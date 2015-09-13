@@ -14,7 +14,7 @@
 #define ActiveAction @"user/userActivate"
 #define tarGetTF 1003
 
-@interface RegisterViewController ()<RequestManagerDelegate>
+@interface RegisterViewController ()<RequestManagerDelegate,UIAlertViewDelegate>
 {
     RequestManager *request;
 }
@@ -31,9 +31,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.userNameTF.text = @"ckh";
-    self.inputPwdTF.text = @"test";
-    self.inputAgainTf.text = @"test";
+//    self.userNameTF.text = @"ckh";
+//    self.inputPwdTF.text = @"test";
+//    self.inputAgainTf.text = @"test";
     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName, nil]];
     [self.userNameTF performSelector:@selector(becomeFirstResponder) withObject:nil afterDelay:0.4];
     
@@ -157,10 +157,11 @@
             [formData setValue:token     forKey:@"token"];
             [formData setValue:activationid    forKey:@"activationid"];
             [formData setValue:@"123456"    forKey:@"code"];
+            //激活
             [request requestWithType:AsynchronousType RequestTag:Active FormData:formData Action:ActiveAction];
         }else{//激活
-            [[[UIAlertView alloc]initWithTitle:@"温馨提示" message:@"注册成功" delegate:nil cancelButtonTitle:@"确定" otherButtonTitles: nil] show];
-            [self performSelector:@selector(goBack) withObject:nil afterDelay:3];
+            [[[UIAlertView alloc]initWithTitle:@"温馨提示" message:@"注册成功并激活" delegate:self cancelButtonTitle:@"确定" otherButtonTitles: @"返回登录页面",nil] show];
+           
         }
     }else//失败
     {
@@ -168,6 +169,12 @@
          [[[UIAlertView alloc]initWithTitle:@"注册失败" message:msg delegate:nil cancelButtonTitle:@"确定" otherButtonTitles: nil] show];
     }
    
+}
+-(void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == 1) {
+        [self goback];
+    }
 }
 - (void)goback
 {

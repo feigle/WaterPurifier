@@ -1,5 +1,5 @@
 //
-//  MessageDetailViewcontroller.h
+//  FilterViewcontroller.h
 //  WaterPurifier
 //
 //  Created by bjdz on 15-3-31.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface MessageDetailViewcontroller : UIViewController
-@property (nonatomic,retain)NSDictionary *infoDic;
+@interface FilterViewcontroller : UIViewController
+@property (nonatomic,retain)NSArray *infoArr;
 @end

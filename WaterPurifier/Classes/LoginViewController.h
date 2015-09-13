@@ -10,4 +10,6 @@
 
 @interface LoginViewController : UIViewController
 
+- (IBAction)cancelWifiSetting:(UIStoryboardSegue *)sender;
+
 @end

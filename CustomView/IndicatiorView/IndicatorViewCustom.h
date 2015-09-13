@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface IndicatorViewCustom : UIView
+@property (assign, nonatomic)CGFloat downloadedBytes;
 /**
  *  开始加载动画
  *

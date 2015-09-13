@@ -52,10 +52,13 @@
 @end
 
 @implementation UserInfoViewController
-
+- (void)viewWillAppear:(BOOL)animated
+{
+    [self getUserInfo];
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [self getUserInfo];
+    
     [[UINavigationBar appearance] setBarTintColor:ColorFromRGB(0x004a80)];
     
     self.userNameLabel.text  = [kUD objectForKey:@"account"];

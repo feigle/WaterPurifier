@@ -7,7 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		000993621AFDF19400C7682F /* SimpleInterfaceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 000993611AFDF19400C7682F /* SimpleInterfaceManager.m */; };
 		0027AACB1AEE82C500248D36 /* RSA.m in Sources */ = {isa = PBXBuildFile; fileRef = 0027AACA1AEE82C500248D36 /* RSA.m */; };
+		003E224C1AF38A7900CCF99B /* UserInfoTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 003E224B1AF38A7900CCF99B /* UserInfoTableView.m */; };
 		004245021AE008800058A1B0 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 004245001AE008800058A1B0 /* InfoPlist.strings */; };
 		004245041AE0088D0058A1B0 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 004245031AE0088D0058A1B0 /* main.m */; };
 		004245081AE009230058A1B0 /* WaterPurifierTests-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 004245071AE009230058A1B0 /* WaterPurifierTests-Info.plist */; };
@@ -17,12 +19,10 @@
 		0052C2031AE006E0008DE355 /* FeedBackViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0052C1E41AE006E0008DE355 /* FeedBackViewController.m */; };
 		0052C2041AE006E0008DE355 /* ForgetPwdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0052C1E61AE006E0008DE355 /* ForgetPwdViewController.m */; };
 		0052C2051AE006E0008DE355 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0052C1E81AE006E0008DE355 /* LoginViewController.m */; };
-		0052C2061AE006E0008DE355 /* MessageDetailViewcontroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 0052C1EA1AE006E0008DE355 /* MessageDetailViewcontroller.m */; };
+		0052C2061AE006E0008DE355 /* FilterViewcontroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 0052C1EA1AE006E0008DE355 /* FilterViewcontroller.m */; };
 		0052C2071AE006E0008DE355 /* DevicesViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0052C1EC1AE006E0008DE355 /* DevicesViewController.m */; };
 		0052C2081AE006E0008DE355 /* MoreViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0052C1EE1AE006E0008DE355 /* MoreViewController.m */; };
-		0052C20A1AE006E0008DE355 /* MyDeviceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0052C1F21AE006E0008DE355 /* MyDeviceViewController.m */; };
 		0052C20E1AE006E0008DE355 /* RegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0052C1F91AE006E0008DE355 /* RegisterViewController.m */; };
-		0052C20F1AE006E0008DE355 /* UserInfoTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0052C1FB1AE006E0008DE355 /* UserInfoTableView.m */; };
 		0052C2101AE006E0008DE355 /* UserInfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0052C1FD1AE006E0008DE355 /* UserInfoViewController.m */; };
 		0052C2111AE006E0008DE355 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 0052C1FF1AE006E0008DE355 /* ViewController.m */; };
 		0052C2151AE00719008DE355 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 0052C2131AE00719008DE355 /* AppDelegate.m */; };
@@ -314,6 +314,9 @@
 		A4B0DD901A7A04CC002F663F /* picPre.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B0DD801A7A04CC002F663F /* picPre.png */; };
 		A4B0DD911A7A04CC002F663F /* picPre@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B0DD811A7A04CC002F663F /* picPre@2x.png */; };
 		A4B0DD941A7A3568002F663F /* headDemo.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B0DD931A7A3568002F663F /* headDemo.png */; };
+		FE44453C1B8B33FF00C63481 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE44453B1B8B33FF00C63481 /* SettingViewController.m */; };
+		FE7855791B88C425002E3163 /* MADeviceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FE7855781B88C425002E3163 /* MADeviceManager.m */; };
+		FE78557C1B88C43B002E3163 /* MADevice.m in Sources */ = {isa = PBXBuildFile; fileRef = FE78557B1B88C43B002E3163 /* MADevice.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -327,8 +330,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		000993601AFDF19400C7682F /* SimpleInterfaceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleInterfaceManager.h; sourceTree = "<group>"; };
+		000993611AFDF19400C7682F /* SimpleInterfaceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleInterfaceManager.m; sourceTree = "<group>"; };
 		0027AAC91AEE82C500248D36 /* RSA.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RSA.h; sourceTree = "<group>"; };
 		0027AACA1AEE82C500248D36 /* RSA.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RSA.m; sourceTree = "<group>"; };
+		003E224A1AF38A7900CCF99B /* UserInfoTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoTableView.h; sourceTree = "<group>"; };
+		003E224B1AF38A7900CCF99B /* UserInfoTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoTableView.m; sourceTree = "<group>"; };
 		004245011AE008800058A1B0 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = WaterPurifier/en.lproj/InfoPlist.strings; sourceTree = SOURCE_ROOT; };
 		004245031AE0088D0058A1B0 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = WaterPurifier/main.m; sourceTree = SOURCE_ROOT; };
 		004245071AE009230058A1B0 /* WaterPurifierTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "WaterPurifierTests-Info.plist"; path = "WaterPurifierTests/WaterPurifierTests-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -343,18 +350,14 @@
 		0052C1E61AE006E0008DE355 /* ForgetPwdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ForgetPwdViewController.m; sourceTree = "<group>"; };
 		0052C1E71AE006E0008DE355 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		0052C1E81AE006E0008DE355 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
-		0052C1E91AE006E0008DE355 /* MessageDetailViewcontroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageDetailViewcontroller.h; sourceTree = "<group>"; };
-		0052C1EA1AE006E0008DE355 /* MessageDetailViewcontroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageDetailViewcontroller.m; sourceTree = "<group>"; };
+		0052C1E91AE006E0008DE355 /* FilterViewcontroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FilterViewcontroller.h; sourceTree = "<group>"; };
+		0052C1EA1AE006E0008DE355 /* FilterViewcontroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FilterViewcontroller.m; sourceTree = "<group>"; };
 		0052C1EB1AE006E0008DE355 /* DevicesViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DevicesViewController.h; sourceTree = "<group>"; };
 		0052C1EC1AE006E0008DE355 /* DevicesViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DevicesViewController.m; sourceTree = "<group>"; };
 		0052C1ED1AE006E0008DE355 /* MoreViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MoreViewController.h; sourceTree = "<group>"; };
 		0052C1EE1AE006E0008DE355 /* MoreViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MoreViewController.m; sourceTree = "<group>"; };
-		0052C1F11AE006E0008DE355 /* MyDeviceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyDeviceViewController.h; sourceTree = "<group>"; };
-		0052C1F21AE006E0008DE355 /* MyDeviceViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyDeviceViewController.m; sourceTree = "<group>"; };
 		0052C1F81AE006E0008DE355 /* RegisterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RegisterViewController.h; sourceTree = "<group>"; };
 		0052C1F91AE006E0008DE355 /* RegisterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RegisterViewController.m; sourceTree = "<group>"; };
-		0052C1FA1AE006E0008DE355 /* UserInfoTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoTableView.h; sourceTree = "<group>"; };
-		0052C1FB1AE006E0008DE355 /* UserInfoTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoTableView.m; sourceTree = "<group>"; };
 		0052C1FC1AE006E0008DE355 /* UserInfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UserInfoViewController.h; sourceTree = "<group>"; };
 		0052C1FD1AE006E0008DE355 /* UserInfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UserInfoViewController.m; sourceTree = "<group>"; };
 		0052C1FE1AE006E0008DE355 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -737,11 +740,11 @@
 		A4A220631ABBB0830093272F /* QRCodeGenerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRCodeGenerator.h; sourceTree = "<group>"; };
 		A4A220651ABBB0830093272F /* XDKAirMenuController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = XDKAirMenuController.h; sourceTree = "<group>"; };
 		A4A220661ABBB0830093272F /* XDKAirMenuController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = XDKAirMenuController.m; sourceTree = "<group>"; };
-		A4AF54CD1A70DAF900394BE9 /* WaterPurifier.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaterPurifier.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4AF54CD1A70DAF900394BE9 /* 水盒子.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "水盒子.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4AF54D01A70DAF900394BE9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A4AF54D21A70DAF900394BE9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		A4AF54D41A70DAF900394BE9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		A4AF54EE1A70DAF900394BE9 /* WaterPurifierTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WaterPurifierTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A4AF54EE1A70DAF900394BE9 /* 水盒子.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "水盒子.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4B0DD721A7A04CC002F663F /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
 		A4B0DD731A7A04CC002F663F /* add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add@2x.png"; sourceTree = "<group>"; };
 		A4B0DD741A7A04CC002F663F /* dev.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dev.png; sourceTree = "<group>"; };
@@ -759,6 +762,13 @@
 		A4B0DD801A7A04CC002F663F /* picPre.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = picPre.png; sourceTree = "<group>"; };
 		A4B0DD811A7A04CC002F663F /* picPre@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "picPre@2x.png"; sourceTree = "<group>"; };
 		A4B0DD931A7A3568002F663F /* headDemo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = headDemo.png; sourceTree = "<group>"; };
+		FE44453A1B8B33FF00C63481 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
+		FE44453B1B8B33FF00C63481 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
+		FE7855771B88C425002E3163 /* MADeviceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MADeviceManager.h; sourceTree = SOURCE_ROOT; };
+		FE7855781B88C425002E3163 /* MADeviceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MADeviceManager.m; sourceTree = SOURCE_ROOT; };
+		FE78557A1B88C43B002E3163 /* MADevice.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MADevice.h; sourceTree = SOURCE_ROOT; };
+		FE78557B1B88C43B002E3163 /* MADevice.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MADevice.m; sourceTree = SOURCE_ROOT; };
+		FE7855811B88C6D4002E3163 /* MABaseDataConfig.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MABaseDataConfig.h; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -815,25 +825,27 @@
 				0052C1E61AE006E0008DE355 /* ForgetPwdViewController.m */,
 				0052C1E71AE006E0008DE355 /* LoginViewController.h */,
 				0052C1E81AE006E0008DE355 /* LoginViewController.m */,
-				0052C1E91AE006E0008DE355 /* MessageDetailViewcontroller.h */,
-				0052C1EA1AE006E0008DE355 /* MessageDetailViewcontroller.m */,
+				0052C1E91AE006E0008DE355 /* FilterViewcontroller.h */,
+				0052C1EA1AE006E0008DE355 /* FilterViewcontroller.m */,
 				0052C1EB1AE006E0008DE355 /* DevicesViewController.h */,
 				0052C1EC1AE006E0008DE355 /* DevicesViewController.m */,
 				0052C1ED1AE006E0008DE355 /* MoreViewController.h */,
 				0052C1EE1AE006E0008DE355 /* MoreViewController.m */,
-				0052C1F11AE006E0008DE355 /* MyDeviceViewController.h */,
-				0052C1F21AE006E0008DE355 /* MyDeviceViewController.m */,
 				0052C1F81AE006E0008DE355 /* RegisterViewController.h */,
 				0052C1F91AE006E0008DE355 /* RegisterViewController.m */,
-				0052C1FA1AE006E0008DE355 /* UserInfoTableView.h */,
-				0052C1FB1AE006E0008DE355 /* UserInfoTableView.m */,
 				0052C1FC1AE006E0008DE355 /* UserInfoViewController.h */,
 				0052C1FD1AE006E0008DE355 /* UserInfoViewController.m */,
+				003E224A1AF38A7900CCF99B /* UserInfoTableView.h */,
+				003E224B1AF38A7900CCF99B /* UserInfoTableView.m */,
 				004D96791AEFC41700A1AB9F /* ModifyUserInfoViewController.h */,
 				004D967A1AEFC41700A1AB9F /* ModifyUserInfoViewController.m */,
 				0052C1FE1AE006E0008DE355 /* ViewController.h */,
 				0052C1FF1AE006E0008DE355 /* ViewController.m */,
+				000993601AFDF19400C7682F /* SimpleInterfaceManager.h */,
+				000993611AFDF19400C7682F /* SimpleInterfaceManager.m */,
 				00729A371AF1273300E810B0 /* testData副本.txt */,
+				FE44453A1B8B33FF00C63481 /* SettingViewController.h */,
+				FE44453B1B8B33FF00C63481 /* SettingViewController.m */,
 			);
 			name = Classes;
 			path = WaterPurifier/Classes;
@@ -1542,8 +1554,8 @@
 		A4AF54CE1A70DAF900394BE9 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A4AF54CD1A70DAF900394BE9 /* WaterPurifier.app */,
-				A4AF54EE1A70DAF900394BE9 /* WaterPurifierTests.xctest */,
+				A4AF54CD1A70DAF900394BE9 /* 水盒子.app */,
+				A4AF54EE1A70DAF900394BE9 /* 水盒子.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1580,6 +1592,7 @@
 		A4AF54D61A70DAF900394BE9 /* WaterPurifier */ = {
 			isa = PBXGroup;
 			children = (
+				FE7855761B88C39C002E3163 /* WifiModelManager */,
 				0052C21C1AE007AA008DE355 /* Database */,
 				0052C2121AE00719008DE355 /* AppDelegate.h */,
 				0052C2131AE00719008DE355 /* AppDelegate.m */,
@@ -1654,6 +1667,18 @@
 			path = "dev&mes&pic";
 			sourceTree = "<group>";
 		};
+		FE7855761B88C39C002E3163 /* WifiModelManager */ = {
+			isa = PBXGroup;
+			children = (
+				FE7855771B88C425002E3163 /* MADeviceManager.h */,
+				FE7855781B88C425002E3163 /* MADeviceManager.m */,
+				FE78557A1B88C43B002E3163 /* MADevice.h */,
+				FE78557B1B88C43B002E3163 /* MADevice.m */,
+				FE7855811B88C6D4002E3163 /* MABaseDataConfig.h */,
+			);
+			name = WifiModelManager;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1671,7 +1696,7 @@
 			);
 			name = WaterPurifier;
 			productName = IPMonitor;
-			productReference = A4AF54CD1A70DAF900394BE9 /* WaterPurifier.app */;
+			productReference = A4AF54CD1A70DAF900394BE9 /* 水盒子.app */;
 			productType = "com.apple.product-type.application";
 		};
 		A4AF54ED1A70DAF900394BE9 /* WaterPurifierTests */ = {
@@ -1689,7 +1714,7 @@
 			);
 			name = WaterPurifierTests;
 			productName = IPMonitorTests;
-			productReference = A4AF54EE1A70DAF900394BE9 /* WaterPurifierTests.xctest */;
+			productReference = A4AF54EE1A70DAF900394BE9 /* 水盒子.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -1702,7 +1727,7 @@
 				ORGANIZATIONNAME = joblee;
 				TargetAttributes = {
 					A4AF54CC1A70DAF900394BE9 = {
-						DevelopmentTeam = QFQ5J3684A;
+						DevelopmentTeam = VT7N33933E;
 					};
 					A4AF54ED1A70DAF900394BE9 = {
 						DevelopmentTeam = QFQ5J3684A;
@@ -1930,6 +1955,7 @@
 				A47821EB1A888396008B9111 /* SCLAlertViewResponder.m in Sources */,
 				A47822071A88931E008B9111 /* UIView+Extension.m in Sources */,
 				A47822661A89A129008B9111 /* SpringCollectionViewFlowLayout.m in Sources */,
+				FE7855791B88C425002E3163 /* MADeviceManager.m in Sources */,
 				A43528641A7721F100F4F65C /* ASIFormDataRequest.m in Sources */,
 				A43528721A7721F100F4F65C /* wldh_rc4.m in Sources */,
 				A43528651A7721F100F4F65C /* ASIHTTPRequest.m in Sources */,
@@ -1946,6 +1972,7 @@
 				0052C2101AE006E0008DE355 /* UserInfoViewController.m in Sources */,
 				A4A220361ABBAF300093272F /* DetailViewController.m in Sources */,
 				A48076231AB13D8F009E0362 /* BreatheAnimationView.m in Sources */,
+				000993621AFDF19400C7682F /* SimpleInterfaceManager.m in Sources */,
 				A478225B1A88B294008B9111 /* TGCameraGridView.m in Sources */,
 				0052C2011AE006E0008DE355 /* AlbumViewController.m in Sources */,
 				0052C2301AE007AA008DE355 /* NSDate+Exts.m in Sources */,
@@ -1961,6 +1988,7 @@
 				A46375781A861CC20050F615 /* JLBounceSheet.m in Sources */,
 				A478225A1A88B294008B9111 /* TGCameraFocusView.m in Sources */,
 				A47822021A88931E008B9111 /* MJRefreshConst.m in Sources */,
+				003E224C1AF38A7900CCF99B /* UserInfoTableView.m in Sources */,
 				A48076A01AB180C9009E0362 /* GTMBase64.m in Sources */,
 				A435286D1A7721F100F4F65C /* SBJsonParser.m in Sources */,
 				A47822511A88B294008B9111 /* TGCameraColor.m in Sources */,
@@ -1970,7 +1998,6 @@
 				A478224A1A88B294008B9111 /* TGCameraAuthorizationViewController.m in Sources */,
 				A47821F01A888851008B9111 /* DemoVC.m in Sources */,
 				A47822061A88931E008B9111 /* UIScrollView+MJRefresh.m in Sources */,
-				0052C20A1AE006E0008DE355 /* MyDeviceViewController.m in Sources */,
 				A4A2204C1ABBB04A0093272F /* RequestManager.m in Sources */,
 				0052C2071AE006E0008DE355 /* DevicesViewController.m in Sources */,
 				A47821EA1A888396008B9111 /* SCLAlertView.m in Sources */,
@@ -1988,13 +2015,15 @@
 				A46336751ACA9E8D0054009E /* CustomTableViewCell.m in Sources */,
 				A41D64561AA9A330006AD79D /* RMDisplayLabel.m in Sources */,
 				A4A2206A1ABBB0830093272F /* XDKAirMenuController.m in Sources */,
+				FE44453C1B8B33FF00C63481 /* SettingViewController.m in Sources */,
 				0052C2321AE007AA008DE355 /* STDbHandle.m in Sources */,
 				A4A2204A1ABBB04A0093272F /* NSDate+JLAddtions.m in Sources */,
 				A435286E1A7721F100F4F65C /* SBJsonWriter.m in Sources */,
 				0027AACB1AEE82C500248D36 /* RSA.m in Sources */,
 				A4A220481ABBB04A0093272F /* JLAES+JLAdditions.m in Sources */,
 				A435286A1A7721F100F4F65C /* NSString+SBJSON.m in Sources */,
-				0052C2061AE006E0008DE355 /* MessageDetailViewcontroller.m in Sources */,
+				FE78557C1B88C43B002E3163 /* MADevice.m in Sources */,
+				0052C2061AE006E0008DE355 /* FilterViewcontroller.m in Sources */,
 				0052C2151AE00719008DE355 /* AppDelegate.m in Sources */,
 				A4A220681ABBB0830093272F /* PRTweenTimingFunctions.m in Sources */,
 				A47821EC1A888396008B9111 /* SCLAlertViewStyleKit.m in Sources */,
@@ -2033,7 +2062,6 @@
 				A47822551A88B294008B9111 /* TGCameraShot.m in Sources */,
 				0052C2051AE006E0008DE355 /* LoginViewController.m in Sources */,
 				A46375701A8618680050F615 /* JLBlurView.m in Sources */,
-				0052C20F1AE006E0008DE355 /* UserInfoTableView.m in Sources */,
 				A478224C1A88B294008B9111 /* TGCameraViewController.m in Sources */,
 				A47291A31AAEC76400AC4A38 /* UIImage+FixOrientation.m in Sources */,
 			);
@@ -2133,7 +2161,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chengfei Ma (2JJ335CS4T)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chengfei Ma (2JJ335CS4T)";
 				COPY_PHASE_STRIP = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -2151,6 +2180,8 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
 				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "水盒子";
+				PROVISIONING_PROFILE = "aa6987b5-5f07-466f-970a-4cdda0bd68de";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -2171,7 +2202,8 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chengfei Ma (2JJ335CS4T)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chengfei Ma (2JJ335CS4T)";
 				COPY_PHASE_STRIP = YES;
 				ENABLE_NS_ASSERTIONS = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -2182,6 +2214,8 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				PRODUCT_NAME = "水盒子";
+				PROVISIONING_PROFILE = "aa6987b5-5f07-466f-970a-4cdda0bd68de";
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -2193,7 +2227,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chengfei Ma (2JJ335CS4T)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Extend/ShareSDK/Connection",
@@ -2219,8 +2253,8 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-all_load";
-				PRODUCT_NAME = WaterPurifier;
-				PROVISIONING_PROFILE = "";
+				PRODUCT_NAME = "水盒子";
+				PROVISIONING_PROFILE = "aa6987b5-5f07-466f-970a-4cdda0bd68de";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
@@ -2233,7 +2267,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chengfei Ma (2JJ335CS4T)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Extend/ShareSDK/Connection",
@@ -2259,8 +2293,8 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-all_load";
-				PRODUCT_NAME = WaterPurifier;
-				PROVISIONING_PROFILE = "";
+				PRODUCT_NAME = "水盒子";
+				PROVISIONING_PROFILE = "aa6987b5-5f07-466f-970a-4cdda0bd68de";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
@@ -2283,7 +2317,7 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = "WaterPurifierTests/WaterPurifierTests-Info.plist";
-				PRODUCT_NAME = WaterPurifierTests;
+				PRODUCT_NAME = "水盒子";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -2301,7 +2335,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "WaterPurifier/WaterPurifier-Prefix.pch";
 				INFOPLIST_FILE = "WaterPurifierTests/WaterPurifierTests-Info.plist";
-				PRODUCT_NAME = WaterPurifierTests;
+				PRODUCT_NAME = "水盒子";
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};

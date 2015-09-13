@@ -7,7 +7,6 @@
 //
 
 #import "ViewController.h"
-#import "MyDeviceViewController.h"
 #import "PRTween.h"
 #import "IndicatorViewCustom.h"
 #import "Macros.h"
@@ -69,7 +68,7 @@
     bacImage.image = [UIImage imageNamed:@"userInfoBG"];
     [self.view addSubview:bacImage];
     
-    arr = [NSArray arrayWithObjects:@"主页",@"密码重置",@"帮助",@"关于我们",@"待机", nil];
+    arr = [NSArray arrayWithObjects:@"主页",@"密码重置",@"帮助",@"关于我们", nil];
     imgArr = [NSArray arrayWithObjects:@"iconDev",@"iconDev",@"iconDev",@"iconMore",@"iconDev", nil];
     self.tableView = [[UITableView alloc]initWithFrame:CGRectMake(0, 0, MRScreenHeight, MRScreenHeight)];
     self.tableView.dataSource = self;
@@ -92,7 +91,7 @@
 }
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [arr count]+1;
+    return [arr count];
 }
 
 -(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -132,11 +131,11 @@
             UIView *lineView = [[UIView alloc]initWithFrame:CGRectMake(0, cell_h-1, cell_w, 1)];
             lineView.backgroundColor = [UIColor colorWithRed:0/255.0f green:105/255.0f blue:163/255.0f alpha:1];
             [cell addSubview:lineView];
-            NSString *imgName = [imgArr objectAtIndex:indexPath.row-1];
+            NSString *imgName = [imgArr objectAtIndex:0];
             cell.imageView.image = [UIImage imageNamed:imgName];
         }
         if (indexPath.row>0 && indexPath.row<5) {
-            cell.textLabel.text = [arr objectAtIndex:indexPath.row-1];
+            cell.textLabel.text = [arr objectAtIndex:indexPath.row];
         }
         
     }else{

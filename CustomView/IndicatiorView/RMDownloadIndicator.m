@@ -90,7 +90,7 @@
         _closedIndicatorBackgroundStrokeColor = [UIColor grayColor];
         _coverWidth = LineWidth;
         
-//        [self addDisplayLabel];
+        [self addDisplayLabel];
     }
     else
     {
@@ -130,11 +130,11 @@
 
 - (void)addDisplayLabel
 {
-    self.displayLabel = [[RMDisplayLabel alloc] initWithFrame:CGRectMake((CGRectGetWidth(self.bounds)/2 - 30/2), (CGRectGetHeight(self.bounds)/2 - 30/2), 30, 30)];
+    self.displayLabel = [[RMDisplayLabel alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, self.frame.size.height)];
     self.displayLabel.backgroundColor = [UIColor clearColor];
-    self.displayLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:11.5];
+    self.displayLabel.font = [UIFont fontWithName:@"HelveticaNeue-Bold" size:25];
     self.displayLabel.text = @"0";
-//    self.displayLabel.textColor = [UIColor grayColor];
+    self.displayLabel.textColor = [UIColor whiteColor];
     self.displayLabel.textAlignment = NSTextAlignmentCenter;
     [self addSubview:self.displayLabel];
 }
@@ -244,15 +244,15 @@
     
     _animatingLayer.path = (__bridge CGPathRef)((id)_paths[(_paths.count -1)]);
     self.lastSourceAngle = destinationAngle;
-    
+    //画圆
     CAKeyframeAnimation *pathAnimation = [CAKeyframeAnimation animationWithKeyPath:@"path"];
     [pathAnimation setValues:_paths];
     [pathAnimation setDuration:self.animationDuration];
     [pathAnimation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionEaseOut]];
     [pathAnimation setRemovedOnCompletion:YES];
     [_animatingLayer addAnimation:pathAnimation forKey:@"path"];
-    
-//    [self.displayLabel updateValue:downloadedBytes/bytes];
+    //更新百分比
+    [self.displayLabel updateValue:downloadedBytes/bytes];
 }
 
 - (CGFloat)destinationAngleForRatio:(CGFloat)ratio
