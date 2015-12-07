@@ -57,6 +57,10 @@
     return [NSString stringWithFormat:@"%d", sum];
 }
 
+
+//  设置AP服务器模式命令： AT+NETP=TCP,Server,8899,10.10.10.254
+//       设置wifi用户名：AT+WSSSID=用户名(用户名)
+//         设置wifi密码：AT+WSKEY=WPA2PSK,TKIP/AES,密码(用户名)
 - (IBAction)sendCmd:(id)sender
 {
     UIButton *btn = (UIButton *)sender;
@@ -64,7 +68,8 @@
     if (currentDevice.mode == COMMAND_MODE) {
         NSString *commandStr = nil;
         if (tag == 0) {
-            commandStr = self.keyTextField.text;
+            commandStr = @"AT+NETP=TCP,Server,8899,10.10.10.254";
+//            commandStr = self.keyTextField.text;
         }else if (tag == 1) {
             commandStr = self.ssidTextField.text;
         }else if (tag == 3) {

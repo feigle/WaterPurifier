@@ -295,8 +295,6 @@
 		A4AF54D11A70DAF900394BE9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4AF54D01A70DAF900394BE9 /* Foundation.framework */; };
 		A4AF54D31A70DAF900394BE9 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4AF54D21A70DAF900394BE9 /* CoreGraphics.framework */; };
 		A4AF54D51A70DAF900394BE9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4AF54D41A70DAF900394BE9 /* UIKit.framework */; };
-		A4AF54F11A70DAF900394BE9 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4AF54D01A70DAF900394BE9 /* Foundation.framework */; };
-		A4AF54F21A70DAF900394BE9 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A4AF54D41A70DAF900394BE9 /* UIKit.framework */; };
 		A4B0DD821A7A04CC002F663F /* add.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B0DD721A7A04CC002F663F /* add.png */; };
 		A4B0DD831A7A04CC002F663F /* add@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B0DD731A7A04CC002F663F /* add@2x.png */; };
 		A4B0DD841A7A04CC002F663F /* dev.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B0DD741A7A04CC002F663F /* dev.png */; };
@@ -314,20 +312,11 @@
 		A4B0DD901A7A04CC002F663F /* picPre.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B0DD801A7A04CC002F663F /* picPre.png */; };
 		A4B0DD911A7A04CC002F663F /* picPre@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B0DD811A7A04CC002F663F /* picPre@2x.png */; };
 		A4B0DD941A7A3568002F663F /* headDemo.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B0DD931A7A3568002F663F /* headDemo.png */; };
+		C99B65FC1BF74EFF00AC95DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C99B65FB1BF74EFF00AC95DC /* LaunchScreen.storyboard */; };
 		FE44453C1B8B33FF00C63481 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE44453B1B8B33FF00C63481 /* SettingViewController.m */; };
 		FE7855791B88C425002E3163 /* MADeviceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FE7855781B88C425002E3163 /* MADeviceManager.m */; };
 		FE78557C1B88C43B002E3163 /* MADevice.m in Sources */ = {isa = PBXBuildFile; fileRef = FE78557B1B88C43B002E3163 /* MADevice.m */; };
 /* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		A4AF54F31A70DAF900394BE9 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = A4AF54C51A70DAF900394BE9 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = A4AF54CC1A70DAF900394BE9;
-			remoteInfo = IPMonitor;
-		};
-/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		000993601AFDF19400C7682F /* SimpleInterfaceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleInterfaceManager.h; sourceTree = "<group>"; };
@@ -744,7 +733,6 @@
 		A4AF54D01A70DAF900394BE9 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A4AF54D21A70DAF900394BE9 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		A4AF54D41A70DAF900394BE9 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		A4AF54EE1A70DAF900394BE9 /* 水盒子.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "水盒子.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4B0DD721A7A04CC002F663F /* add.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = add.png; sourceTree = "<group>"; };
 		A4B0DD731A7A04CC002F663F /* add@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "add@2x.png"; sourceTree = "<group>"; };
 		A4B0DD741A7A04CC002F663F /* dev.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = dev.png; sourceTree = "<group>"; };
@@ -762,6 +750,7 @@
 		A4B0DD801A7A04CC002F663F /* picPre.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = picPre.png; sourceTree = "<group>"; };
 		A4B0DD811A7A04CC002F663F /* picPre@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "picPre@2x.png"; sourceTree = "<group>"; };
 		A4B0DD931A7A3568002F663F /* headDemo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = headDemo.png; sourceTree = "<group>"; };
+		C99B65FB1BF74EFF00AC95DC /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		FE44453A1B8B33FF00C63481 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		FE44453B1B8B33FF00C63481 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		FE7855771B88C425002E3163 /* MADeviceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MADeviceManager.h; sourceTree = SOURCE_ROOT; };
@@ -799,15 +788,6 @@
 				A4AF54D31A70DAF900394BE9 /* CoreGraphics.framework in Frameworks */,
 				A4AF54D51A70DAF900394BE9 /* UIKit.framework in Frameworks */,
 				A4AF54D11A70DAF900394BE9 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A4AF54EB1A70DAF900394BE9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				A4AF54F21A70DAF900394BE9 /* UIKit.framework in Frameworks */,
-				A4AF54F11A70DAF900394BE9 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1555,7 +1535,6 @@
 			isa = PBXGroup;
 			children = (
 				A4AF54CD1A70DAF900394BE9 /* 水盒子.app */,
-				A4AF54EE1A70DAF900394BE9 /* 水盒子.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1615,6 +1594,7 @@
 				0052C2181AE0073B008DE355 /* WaterPurifier-Prefix.pch */,
 				004245001AE008800058A1B0 /* InfoPlist.strings */,
 				004245031AE0088D0058A1B0 /* main.m */,
+				C99B65FB1BF74EFF00AC95DC /* LaunchScreen.storyboard */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -1699,24 +1679,6 @@
 			productReference = A4AF54CD1A70DAF900394BE9 /* 水盒子.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A4AF54ED1A70DAF900394BE9 /* WaterPurifierTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A4AF55021A70DAF900394BE9 /* Build configuration list for PBXNativeTarget "WaterPurifierTests" */;
-			buildPhases = (
-				A4AF54EA1A70DAF900394BE9 /* Sources */,
-				A4AF54EB1A70DAF900394BE9 /* Frameworks */,
-				A4AF54EC1A70DAF900394BE9 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				A4AF54F41A70DAF900394BE9 /* PBXTargetDependency */,
-			);
-			name = WaterPurifierTests;
-			productName = IPMonitorTests;
-			productReference = A4AF54EE1A70DAF900394BE9 /* 水盒子.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -1728,10 +1690,6 @@
 				TargetAttributes = {
 					A4AF54CC1A70DAF900394BE9 = {
 						DevelopmentTeam = VT7N33933E;
-					};
-					A4AF54ED1A70DAF900394BE9 = {
-						DevelopmentTeam = QFQ5J3684A;
-						TestTargetID = A4AF54CC1A70DAF900394BE9;
 					};
 				};
 			};
@@ -1752,7 +1710,6 @@
 			projectRoot = "";
 			targets = (
 				A4AF54CC1A70DAF900394BE9 /* WaterPurifier */,
-				A4AF54ED1A70DAF900394BE9 /* WaterPurifierTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1907,6 +1864,7 @@
 				A443515F1A7B1A13006ADDAC /* voice.png in Resources */,
 				A43528F01A78E79F00F4F65C /* BGNavBar.png in Resources */,
 				A4303EA11A83087600F8C0D2 /* smallScreenPre@2x.png in Resources */,
+				C99B65FC1BF74EFF00AC95DC /* LaunchScreen.storyboard in Resources */,
 				A44351581A7B1A13006ADDAC /* snapshootPre.png in Resources */,
 				A47291741AAE87B200AC4A38 /* CameraFlashOn.png in Resources */,
 				A443515A1A7B1A13006ADDAC /* stop.png in Resources */,
@@ -1933,13 +1891,6 @@
 				A4B0DD8C1A7A04CC002F663F /* mesPre.png in Resources */,
 				A47291751AAE87B200AC4A38 /* CameraFlashOn@2x.png in Resources */,
 				A44351461A7B1A12006ADDAC /* fullscreenSayPre.png in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A4AF54EC1A70DAF900394BE9 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -2067,22 +2018,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A4AF54EA1A70DAF900394BE9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		A4AF54F41A70DAF900394BE9 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = A4AF54CC1A70DAF900394BE9 /* WaterPurifier */;
-			targetProxy = A4AF54F31A70DAF900394BE9 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		004245001AE008800058A1B0 /* InfoPlist.strings */ = {
@@ -2226,8 +2162,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chengfei Ma (2JJ335CS4T)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chengfei Ma (2JJ335CS4T)";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Extend/ShareSDK/Connection",
@@ -2253,8 +2190,9 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-all_load";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.jieshun.jsht;
 				PRODUCT_NAME = "水盒子";
-				PROVISIONING_PROFILE = "aa6987b5-5f07-466f-970a-4cdda0bd68de";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
@@ -2266,8 +2204,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chengfei Ma (2JJ335CS4T)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chengfei Ma (2JJ335CS4T)";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Extend/ShareSDK/Connection",
@@ -2293,51 +2232,12 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				OTHER_LDFLAGS = "-all_load";
+				PRODUCT_BUNDLE_IDENTIFIER = cn.jieshun.jsht;
 				PRODUCT_NAME = "水盒子";
-				PROVISIONING_PROFILE = "aa6987b5-5f07-466f-970a-4cdda0bd68de";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALID_ARCHS = "armv7 armv7s";
 				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		A4AF55031A70DAF900394BE9 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/WaterPurifierapp/WaterPurifier";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "WaterPurifier/WaterPurifier-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "WaterPurifierTests/WaterPurifierTests-Info.plist";
-				PRODUCT_NAME = "水盒子";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		A4AF55041A70DAF900394BE9 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/WaterPurifier.app/WaterPurifier";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "WaterPurifier/WaterPurifier-Prefix.pch";
-				INFOPLIST_FILE = "WaterPurifierTests/WaterPurifierTests-Info.plist";
-				PRODUCT_NAME = "水盒子";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
 		};
@@ -2358,15 +2258,6 @@
 			buildConfigurations = (
 				A4AF55001A70DAF900394BE9 /* Debug */,
 				A4AF55011A70DAF900394BE9 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A4AF55021A70DAF900394BE9 /* Build configuration list for PBXNativeTarget "WaterPurifierTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				A4AF55031A70DAF900394BE9 /* Debug */,
-				A4AF55041A70DAF900394BE9 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
