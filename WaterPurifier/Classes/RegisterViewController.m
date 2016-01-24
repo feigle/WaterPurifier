@@ -18,12 +18,12 @@
 {
     RequestManager *request;
 }
-@property (weak, nonatomic) IBOutlet UITextField *userNameTF;
-@property (weak, nonatomic) IBOutlet UITextField *inputPwdTF;
-@property (weak, nonatomic) IBOutlet UITextField *inputAgainTf;
-@property (weak, nonatomic) IBOutlet UITextField *VerificationCodeTf;
-@property (weak, nonatomic) IBOutlet UIView *contentView;
-@property (weak, nonatomic) IBOutlet UIButton *registBtn;
+@property (strong, nonatomic)  UITextField *userNameTF;
+@property (strong, nonatomic)  UITextField *inputPwdTF;
+@property (strong, nonatomic)  UITextField *inputAgainTf;
+@property (strong, nonatomic)  UITextField *VerificationCodeTf;
+@property (strong, nonatomic)  UIButton *getCodeBtn;
+@property (strong, nonatomic)  UIButton *registBtn;
 
 @end
 
@@ -36,8 +36,72 @@
 //    self.inputAgainTf.text = @"test";
     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName, nil]];
     [self.userNameTF performSelector:@selector(becomeFirstResponder) withObject:nil afterDelay:0.4];
-    
+    [self initSubViews];
     // Do any additional setup after loading the view.
+}
+- (void)initSubViews
+{
+    self.userNameTF = [[UITextField alloc]initWithFrame:CGRectMake(20, 64+20, SCREEN_WIDTH-40, 44)];
+    self.userNameTF.placeholder = @"用户名";
+    self.userNameTF.layer.borderWidth = 1;
+    self.userNameTF.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    self.userNameTF.leftViewMode = UITextFieldViewModeAlways;
+    [self.view addSubview:self.userNameTF];
+    
+    
+    
+    self.inputPwdTF = [[UITextField alloc]initWithFrame:CGRectMake(20, CGRectGetMaxY(self.userNameTF.frame)+20, SCREEN_WIDTH-40, 44)];
+    self.inputPwdTF.layer.borderWidth = 1;
+    self.inputPwdTF.placeholder = @"密码";
+    self.inputPwdTF.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    self.inputPwdTF.leftViewMode = UITextFieldViewModeAlways;
+    [self.view addSubview:self.inputPwdTF];
+    
+    self.inputAgainTf = [[UITextField alloc]initWithFrame:CGRectMake(20,  CGRectGetMaxY(self.inputPwdTF.frame)+20, SCREEN_WIDTH-40, 44)];
+    self.inputAgainTf.layer.borderWidth = 1;
+    self.inputAgainTf.placeholder = @"验证密码";
+    self.inputAgainTf.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    self.inputAgainTf.leftViewMode = UITextFieldViewModeAlways;
+    [self.view addSubview:self.inputAgainTf];
+    
+    self.VerificationCodeTf = [[UITextField alloc]initWithFrame:CGRectMake(20,  CGRectGetMaxY(self.inputAgainTf.frame)+20, (SCREEN_WIDTH-60)/2, 44)];
+    self.VerificationCodeTf.layer.borderWidth = 1;
+    self.VerificationCodeTf.placeholder = @"验证码";
+    self.VerificationCodeTf.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    self.VerificationCodeTf.leftViewMode = UITextFieldViewModeAlways;
+    [self.view addSubview:self.VerificationCodeTf];
+    
+    
+    CGRect frame = [self.inputAgainTf frame];
+    frame.size.width = 10.0f;
+    UIView *leftview1 = [[UIView alloc] initWithFrame:frame];
+    UIView *leftview2 = [[UIView alloc] initWithFrame:frame];
+    UIView *leftview3 = [[UIView alloc] initWithFrame:frame];
+    UIView *leftview4 = [[UIView alloc] initWithFrame:frame];
+    
+    self.userNameTF.leftView = leftview1;
+    self.inputPwdTF.leftView = leftview2;
+    self.inputAgainTf.leftView = leftview3;
+    self.VerificationCodeTf.leftView = leftview4;
+    
+    
+    self.getCodeBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.getCodeBtn.frame =CGRectMake(CGRectGetMaxX(self.VerificationCodeTf.frame)+10,  self.VerificationCodeTf.frame.origin.y, self.VerificationCodeTf.frame.size.width, 44);
+    [self.getCodeBtn setTitle:@"验证码" forState:UIControlStateNormal];
+    self.getCodeBtn.backgroundColor = [UIColor colorWithRed:11/255.0f green:151/255.0f blue:235/255.0f alpha:1];
+    [self.getCodeBtn addTarget:self  action:@selector(getVerificationCode:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.getCodeBtn];
+    
+    
+    
+    self.registBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.registBtn.frame =CGRectMake(20,  CGRectGetMaxY(self.VerificationCodeTf.frame)+60, SCREEN_WIDTH-40, 44);
+    [self.registBtn setTitle:@"立即注册" forState:UIControlStateNormal];
+    self.registBtn.backgroundColor = [UIColor colorWithRed:11/255.0f green:151/255.0f blue:235/255.0f alpha:1];
+    [self.registBtn addTarget:self  action:@selector(didRegistBtnClicked:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.registBtn];
+    
+    
 }
 
 -(BOOL)textFieldShouldBeginEditing:(UITextField *)textField
@@ -87,9 +151,9 @@
 }
 - (void)contentViewMove:(float)origin_y
 {
-    [UIView animateWithDuration:0.2 animations:^{
-        self.contentView.frame = CGRectMake(0, origin_y, MRScreenWidth, MRScreenHeight);
-    }];
+//    [UIView animateWithDuration:0.2 animations:^{
+//        self.contentView.frame = CGRectMake(0, origin_y, MRScreenWidth, MRScreenHeight);
+//    }];
 }
 #pragma mark -- 隐藏键盘
 - (void)hideKeyBorad
@@ -115,7 +179,7 @@
     
 }
 #pragma mark -- 获取验证码
-- (IBAction)getVerificationCode:(id)sender {
+- (void)getVerificationCode:(id)sender {
     
     [self hideKeyBorad];
     request = [RequestManager share];
@@ -128,7 +192,7 @@
     [request requestWithType:AsynchronousType RequestTag:REGIST FormData:formData Action:REGIST_ACTION];
 }
 #pragma mark -- 注册
-- (IBAction)didRegistBtnClicked:(id)sender {
+- (void)didRegistBtnClicked:(id)sender {
     [self hideKeyBorad];
     [self contentViewMove:0];
     request = [RequestManager share];

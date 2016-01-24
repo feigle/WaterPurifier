@@ -98,6 +98,7 @@
     self.navigationController.navigationBarHidden = YES;
     
 }
+
 - (void)hideNVC
 {
     [UIView animateWithDuration:0.3 animations:^{
@@ -131,6 +132,7 @@
     [UIView animateWithDuration:0.05 animations:^{
         self.navigationController.navigationBar.frame = CGRectMake(0, 20, self.navigationController.navigationBar.frame.size.width, 45);
     }];
+    self.navigationController.navigationBarHidden = NO;
     
 }
 - (void)viewDidLoad {
@@ -145,11 +147,11 @@
     [XDKAirMenuController sharedMenu].moveEnable = NO;
     self.scrollView.contentSize = CGSizeMake(MRScreenWidth, MRScreenHeight);
     self.scrollView.scrollEnabled = NO;
-    self.userNameTF.text = @"13824473816";
+    self.userNameTF.text = @"18731256026";
     if (isRecord)
-        self.PwdTF.text = @"test";
+        self.PwdTF.text = @"18731256026";
     else
-        self.PwdTF.text = @"test";
+        self.PwdTF.text = @"18731256026";
     
     self.userNameTF.delegate = self;
     self.PwdTF.delegate = self;
@@ -187,6 +189,8 @@
 }
 #pragma mark -- 登录按钮
 - (IBAction)didLoginBtnClicked:(id)sender {
+    [self toIndexPage];
+    return;
 //    [self hidKeyboard];
 //    [self toIndexPage];
 //    return;

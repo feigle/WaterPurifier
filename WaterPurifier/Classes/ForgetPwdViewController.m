@@ -14,11 +14,11 @@
 #define forthTF 1003
 
 @interface ForgetPwdViewController ()<UITextFieldDelegate,RequestManagerDelegate>
-@property (weak, nonatomic) IBOutlet UIView *contentView;
+@property (strong, nonatomic)  UIView *contentView;
 
-@property (weak, nonatomic) IBOutlet UITextField *intputNewPwdTF;
-@property (weak, nonatomic) IBOutlet UITextField *inputAgainTF;
-@property (weak, nonatomic) IBOutlet UIButton *summitBtn;
+@property (strong, nonatomic)  UITextField *intputNewPwdTF;
+@property (strong, nonatomic)  UITextField *inputAgainTF;
+@property (strong, nonatomic)  UIButton *summitBtn;
 
 @end
 
@@ -30,9 +30,39 @@
     
     [self.navigationController.navigationBar setTitleTextAttributes:[NSDictionary dictionaryWithObjectsAndKeys:[UIColor whiteColor],NSForegroundColorAttributeName, nil]];
     
+    self.intputNewPwdTF = [[UITextField alloc]initWithFrame:CGRectMake(20, 64 + 20, SCREEN_WIDTH-40, 44)];
+    self.intputNewPwdTF.layer.borderWidth = 1;
+    self.intputNewPwdTF.placeholder = @"新密码";
+    self.intputNewPwdTF.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    self.intputNewPwdTF.leftViewMode = UITextFieldViewModeAlways;
+    [self.view addSubview:self.intputNewPwdTF];
+    
+    self.inputAgainTF = [[UITextField alloc]initWithFrame:CGRectMake(20,  CGRectGetMaxY(self.intputNewPwdTF.frame)+20, (SCREEN_WIDTH-60)/2, 44)];
+    self.inputAgainTF.layer.borderWidth = 1;
+    self.inputAgainTF.placeholder = @"验证码";
+    self.inputAgainTF.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    self.inputAgainTF.leftViewMode = UITextFieldViewModeAlways;
+    [self.view addSubview:self.inputAgainTF];
+    
+    
+    CGRect frame = [self.intputNewPwdTF frame];
+    frame.size.width = 10.0f;
+    UIView *leftview1 = [[UIView alloc] initWithFrame:frame];
+    UIView *leftview2 = [[UIView alloc] initWithFrame:frame];
+    
+    self.intputNewPwdTF.leftView = leftview1;
+    self.inputAgainTF.leftView = leftview2;
+    
+    
+    self.summitBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.summitBtn.frame =CGRectMake(20,CGRectGetMaxY(self.inputAgainTF.frame)+20 ,SCREEN_WIDTH-40, 44);
+    [self.summitBtn setTitle:@"提交" forState:UIControlStateNormal];
+    self.summitBtn.backgroundColor = [UIColor colorWithRed:11/255.0f green:151/255.0f blue:235/255.0f alpha:1];
+    [self.summitBtn addTarget:self  action:@selector(summit:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.summitBtn];
     // Do any additional setup after loading the view.
 }
-- (IBAction)summit:(id)sender {
+- (void)summit:(id)sender {
     [self scrollContentView:0];
 }
 

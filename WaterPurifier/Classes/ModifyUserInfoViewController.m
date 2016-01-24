@@ -12,9 +12,9 @@
 #define RAction @"user/modifiedSelfProfile"
 @interface ModifyUserInfoViewController ()<RequestManagerDelegate>
 
-@property (weak, nonatomic) IBOutlet UITextField *nameTF;
-@property (weak, nonatomic) IBOutlet UITextField *addressTF;
-@property (weak, nonatomic) IBOutlet UITextField *emailTF;
+@property (strong, nonatomic) UITextField *nameTF;
+@property (strong, nonatomic) UITextField *addressTF;
+@property (strong, nonatomic) UITextField *emailTF;
 
 @end
 
@@ -23,15 +23,59 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 
+    
+    
+   
+    
+    self.nameTF = [[UITextField alloc]initWithFrame:CGRectMake(20, 64+20, SCREEN_WIDTH-40, 44)];
+    self.nameTF.placeholder = @"name";
+    self.nameTF.layer.borderWidth = 1;
+    self.nameTF.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    self.nameTF.leftViewMode = UITextFieldViewModeAlways;
+    [self.view addSubview:self.nameTF];
+    
+    
+    
+    self.addressTF = [[UITextField alloc]initWithFrame:CGRectMake(20, CGRectGetMaxY(self.nameTF.frame)+20, SCREEN_WIDTH-40, 44)];
+    self.addressTF.layer.borderWidth = 1;
+    self.addressTF.placeholder = @"address";
+    self.addressTF.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    self.addressTF.leftViewMode = UITextFieldViewModeAlways;
+    [self.view addSubview:self.addressTF];
+    
+    self.emailTF = [[UITextField alloc]initWithFrame:CGRectMake(20,  CGRectGetMaxY(self.addressTF.frame)+20, SCREEN_WIDTH-40, 44)];
+    self.emailTF.layer.borderWidth = 1;
+    self.emailTF.placeholder = @"email";
+    self.emailTF.layer.borderColor = [UIColor lightGrayColor].CGColor;
+    self.emailTF.leftViewMode = UITextFieldViewModeAlways;
+    [self.view addSubview:self.emailTF];
+    
+    CGRect frame = [self.nameTF frame];
+    frame.size.width = 7.0f;
+    UIView *leftview1 = [[UIView alloc] initWithFrame:frame];
+    UIView *leftview2 = [[UIView alloc] initWithFrame:frame];
+    UIView *leftview3 = [[UIView alloc] initWithFrame:frame];
+    
+    self.nameTF.leftView = leftview1;
+    self.addressTF.leftView = leftview2;
+    self.emailTF.leftView = leftview3;
+    
     NSString *name = [kUD objectForKey:@"account"];
      NSString *openid = [kUD objectForKey:@"openid"];
      NSString *token = [kUD objectForKey:@"token"];
     self.nameTF.text = name;
     self.addressTF.text = @"address";
     self.emailTF.text = @"email";
+    
+    UIButton *summitBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    summitBtn.frame =CGRectMake(20,  CGRectGetMaxY(self.emailTF.frame)+60, SCREEN_WIDTH-40, 44);
+    [summitBtn setTitle:@"提交" forState:UIControlStateNormal];
+    summitBtn.backgroundColor = [UIColor colorWithRed:11/255.0f green:151/255.0f blue:235/255.0f alpha:1];
+    [summitBtn addTarget:self  action:@selector(summitUserInfo) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:summitBtn];
     // Do any additional setup after loading the view.
 }
-- (IBAction)summitUserInfo
+- (void)summitUserInfo
 {
     
     RequestManager *request = [RequestManager share];

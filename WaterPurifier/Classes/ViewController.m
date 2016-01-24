@@ -191,7 +191,6 @@
     
     vc.view.autoresizesSubviews = TRUE;
     vc.view.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
-    
     if (indexPath.row == 0)
         vc = [storyboard instantiateViewControllerWithIdentifier:@"userInfoRootVC"];
     

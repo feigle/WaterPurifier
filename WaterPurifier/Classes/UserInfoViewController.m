@@ -66,7 +66,6 @@
     self.tableView.delegate = self;
     self.tableView.dataSource =self;
     self.tableView.backgroundColor = [UIColor whiteColor];
-    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.frame = CGRectMake(0, CGRectGetMaxY(self.headView.frame), MRScreenWidth, MRScreenHeight-stanavh-CGRectGetHeight(self.headView.frame));
     //TODO:
     //    设置标题颜色
@@ -88,6 +87,8 @@
     self.headImageView.clipsToBounds = YES;
     // Do any additional setup after loading the view.
 }
+
+
 - (IBAction)EditUserInfo:(id)sender {
     UIStoryboard *storyboard = self.storyboard;
     UIViewController *vc = nil;
@@ -231,58 +232,20 @@
     [button setTitleColor:color(0, 175, 240) forState:UIControlStateNormal];
     return button;
 }
--(CGFloat)tableView:(UITableView *)tableView heightForHeaderInSection:(NSInteger)section
-{
-    if (section == 0) {
-        return 22;
-    }
-    return 100;
-}
--(NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-    return 2;
-}
+
 -(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    if (section == 0)
-        return [self.titleArr count]-1;
-    else
-        return 1;
-    
-    
+    return [self.titleArr count]-1;
 }
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     
-    static NSString *CellIdentifier = @"Cell";
-    UITableViewCell *cell = (UITableViewCell *) [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
+    UITableViewCell *cell = (UITableViewCell *) [tableView dequeueReusableCellWithIdentifier:@"UserInfoCell"];
     
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier];
-    }
-    CGFloat cell_w = cell.frame.size.width;
-    CGFloat cell_h = cell.frame.size.height;
-    
-    [[cell detailTextLabel] setTextColor:[UIColor grayColor]];
-    cell.detailTextLabel.font = [UIFont systemFontOfSize:14];
-    
-    if(indexPath.section == 1){
-        UILabel *LogoutLabel = [[UILabel alloc]initWithFrame:CGRectMake(space, 0, cell_w-space*2, cell.frame.size.height)];
-        LogoutLabel.text =@"注销";
-        LogoutLabel.font = [UIFont systemFontOfSize:13];
-        LogoutLabel.textColor = [UIColor whiteColor];
-        LogoutLabel.textAlignment = NSTextAlignmentCenter;
-        LogoutLabel.backgroundColor = ColorFromRGB(0xff4141);
-        LogoutLabel.font = [UIFont systemFontOfSize:16];
-        [cell addSubview:LogoutLabel];
-    }else{
-        LineView *line =[[LineView alloc]initWithColor:[UIColor colorWithRed:231/255.0f green:231/255.0f blue:231/255.0f alpha:1] andFrame:CGRectMake(15, cell_h-1, cell_w-30, 1)];
-        [cell addSubview:line];
-        NSInteger index =  indexPath.row;
-        cell.detailTextLabel.text = [self.titleArr objectAtIndex:index];
-//        cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-    }
-    
+    [cell.textLabel setTextColor:[UIColor grayColor]];
+    cell.textLabel.font = [UIFont systemFontOfSize:14];
+    cell.textLabel.text = [self.titleArr objectAtIndex:indexPath.row];
     
     return cell;
 }
@@ -294,18 +257,17 @@
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    UIStoryboard *storyboard = self.storyboard;
     UIViewController *vc = nil;
     vc.view.autoresizesSubviews = TRUE;
     vc.view.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
      if (indexPath.section == 1){//注销
-         [self requestLogout];
+//         [self requestLogout];
         
     }
     
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
 }
-- (void)requestLogout
+- (IBAction)requestLogout:(id)sender
 {
     NSString *openid = [kUD objectForKey:@"openid"];
     NSString *token = [kUD objectForKey:@"token"];

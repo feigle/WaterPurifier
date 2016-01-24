@@ -215,6 +215,7 @@
     vc.view.autoresizesSubviews = TRUE;
     vc.view.autoresizingMask = UIViewAutoresizingFlexibleWidth|UIViewAutoresizingFlexibleHeight;
     vc = [storyboard instantiateViewControllerWithIdentifier:vcID];
+    
     [nv pushViewController:vc animated:YES];
 }
 
