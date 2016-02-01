@@ -13,5 +13,7 @@
 #define HF11A_SOCKET_PORT 48899
 #define COMMAND_OUTPUT_BUF 2048
 #define TCP_T_TRANS_PORT 8899
+// 搜索设备周期
+#define SCAN_DEVICE_TIME 3.0
 
 #endif

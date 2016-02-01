@@ -20,6 +20,7 @@
 
 @interface MADeviceManager ()
 
+// socket
 @property (nonatomic, assign) NSInteger SD_Broadcast;
 @property (nonatomic, strong) NSTimer *timer;
 
@@ -137,7 +138,7 @@ static MADeviceManager *deviceManager = nil;
                 [current_device setIp:[listItems objectAtIndex:0]];
                 [current_device setMac:[listItems objectAtIndex:1]];
                 [current_device setModel_Id:[listItems objectAtIndex:2]];
-//                [current_device setSd_udp:self.SD_Broadcast];
+                // 发现设备内容格式 10.10.100.254,ACCF2378C17A,HF-LPB100
                 // 发现新设备后，回调给委托对象
                 if ([self.delegate respondsToSelector:@selector(deviceManager:didDiscoveredDevice:)]) {
                     [self.delegate deviceManager:self didDiscoveredDevice:current_device];
@@ -173,17 +174,18 @@ static MADeviceManager *deviceManager = nil;
     NetworkStatus netStatus = [wifiReach currentReachabilityStatus];
     if(netStatus == NotReachable)
     {
+        // 提示网络未连接设置
         UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Sorry" message:@"This feature requires an WiFI connection,please enable WIFI firstly." delegate:self cancelButtonTitle:@"OK" otherButtonTitles:nil];
         [alertView show];
         return;
     }
     // 配置广播地址
     if ([self setupUDPClient]) {
-        // 启动定时器
+        // 启动定时器,默认3s一个搜索周期
         [_timer invalidate];
         _timer = nil;
-        _timer = [NSTimer scheduledTimerWithTimeInterval:3.0 target:self selector:@selector(scanTimeout) userInfo:nil repeats:NO];
-        // 广播数据
+        _timer = [NSTimer scheduledTimerWithTimeInterval:SCAN_DEVICE_TIME target:self selector:@selector(scanTimeout) userInfo:nil repeats:NO];
+        // 发送广播数据
         [self sendBroadcastPacket:@"HF-A11ASSISTHREAD"];
     }
 }
