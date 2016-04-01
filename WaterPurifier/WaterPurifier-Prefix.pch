@@ -21,7 +21,17 @@
 
 
 
-
+/*
+ 接口地址    https://github.com/horsleyley/water_filter/wiki
+ HF-LPB100 上电后,进入默认的模式即透传模式,用户可以通过串口命令把模块切换到命令行模 式
+ 服务器设置命令 AT+NETP=TCP,Server,8899,10.10.10.254
+ 设置AP用户名  AT+WSSSID=JIESHUN201
+ 设置AP密码    AT+WSKEY=WPAPSK,TKIP,@@jieshun201
+ 
+ 重启命令      AT+Z
+ 进入透传模式   AT+ENTM
+ 
+ */
 
 
 

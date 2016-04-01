@@ -76,6 +76,9 @@
     if (self.sd_udp < 0) {
         NSLog(@"socket init failer!");
         self.sd_udp = -1;
+        if ([self.delegate respondsToSelector:@selector(deviceConnectFailed:withError:)]) {
+            [self.delegate deviceConnectFailed:self withError:@"UDP soket create failed"];
+        }
         return NO;
     }
     // If we don't call bind() here, the system decides on the port for us, which is not we want.So below code is to set local port to 48899
@@ -87,11 +90,17 @@
     if (-1 == bind(self.sd_udp,(struct sockaddr *)&sin,sizeof(struct sockaddr_in)))
     {
         NSLog(@"upd socket bind error!");
+        if ([self.delegate respondsToSelector:@selector(deviceConnectFailed:withError:)]) {
+            [self.delegate deviceConnectFailed:self withError:@"UDP soket bind port failed"];
+        }
         // 关闭socket
         close(self.sd_udp);
         self.sd_udp = -1;
         return NO;
     }else {
+        if ([self.delegate respondsToSelector:@selector(deviceConnectSuccess:)]) {
+            [self.delegate deviceConnectSuccess:self];
+        }
         [self performSelectorInBackground:(@selector(receivePacketFromDevice)) withObject:nil];
     }
 
@@ -144,12 +153,26 @@
         int size = recvfrom(self.sd_udp, bufptr, buflen, 0, (struct sockaddr *)&udp_serveraddr, (socklen_t *)&server_addr_len);
         if(size < 0) {
             perror("UDP Server - recvfrom() error");
+            if ([self.delegate respondsToSelector:@selector(deviceSendMsgFailed:)]) {
+                [self.delegate deviceSendMsgFailed:self];
+            }
             break;
         }else {
             printf("UDP Server - recvfrom() is OK...\n");
             // recevice data
             // add code here
-            printf("data : %s", buffer);
+            typeof(self) __weakSelf = self;
+            NSString *retStr = nil;
+            if (strlen(buffer) > 0) {
+                retStr = [NSString stringWithCString:buffer encoding:NSUTF8StringEncoding];
+            }
+            dispatch_async(dispatch_get_main_queue(), ^{
+                if ([self.delegate respondsToSelector:@selector(deviceSendMsgSuccess:withReturnStr:)]) {
+                    [__weakSelf.delegate deviceSendMsgSuccess:__weakSelf withReturnStr:retStr];
+                }
+                NSLog(@"data : %@", retStr);
+            });
+            
         }
     }
     return 0;

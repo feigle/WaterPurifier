@@ -60,11 +60,13 @@
 
 - (void)addPercentViews
 {
-    float w= MRScreenWidth;
+    float w = MRScreenWidth;
+    float h = MRScreenHeight-64;
     for (int i=0; i<3; i++) {
         //加载圆圈
         IndicatorViewCustom * indicatorView = [[IndicatorViewCustom alloc]init];
-        indicatorView.frame = CGRectMake(w/12, 64+w/10+i*(30+w/3), w/3,320/3);
+        indicatorView.frame = CGRectMake(0, 0, w/3,320/3);
+        indicatorView.center = CGPointMake(w/4, 64+(h*((i*2)+1))/6);
         [self.view addSubview:indicatorView];
         indicatorView.downloadedBytes = 99;
         [indicatorView startAnimation:1];
@@ -72,7 +74,8 @@
     for (int i=0; i<2; i++) {
         //加载圆圈
         IndicatorViewCustom * indicatorView = [[IndicatorViewCustom alloc]init];
-        indicatorView.frame = CGRectMake(w/12+w/2, 64+w/10+i*(30+w/3), w/3,320/3);
+        indicatorView.frame = CGRectMake(0, 0, w/3,320/3);
+        indicatorView.center = CGPointMake(w*3/4, 64+(h*((i*2)+1))/6);
         [self.view addSubview:indicatorView];
         indicatorView.downloadedBytes = 99;
         [indicatorView startAnimation:1];

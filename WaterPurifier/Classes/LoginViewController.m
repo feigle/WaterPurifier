@@ -189,8 +189,6 @@
 }
 #pragma mark -- 登录按钮
 - (IBAction)didLoginBtnClicked:(id)sender {
-    [self toIndexPage];
-    return;
 //    [self hidKeyboard];
 //    [self toIndexPage];
 //    return;

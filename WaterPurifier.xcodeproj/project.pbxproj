@@ -312,7 +312,9 @@
 		A4B0DD901A7A04CC002F663F /* picPre.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B0DD801A7A04CC002F663F /* picPre.png */; };
 		A4B0DD911A7A04CC002F663F /* picPre@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B0DD811A7A04CC002F663F /* picPre@2x.png */; };
 		A4B0DD941A7A3568002F663F /* headDemo.png in Resources */ = {isa = PBXBuildFile; fileRef = A4B0DD931A7A3568002F663F /* headDemo.png */; };
+		C987BE011C96CC80003F9184 /* UIView+Toast.m in Sources */ = {isa = PBXBuildFile; fileRef = C987BE001C96CC80003F9184 /* UIView+Toast.m */; };
 		C99B65FC1BF74EFF00AC95DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C99B65FB1BF74EFF00AC95DC /* LaunchScreen.storyboard */; };
+		C99C140F1C60591100C6430A /* WPAppDefault.m in Sources */ = {isa = PBXBuildFile; fileRef = C99C140E1C60591100C6430A /* WPAppDefault.m */; };
 		FE44453C1B8B33FF00C63481 /* SettingViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FE44453B1B8B33FF00C63481 /* SettingViewController.m */; };
 		FE7855791B88C425002E3163 /* MADeviceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FE7855781B88C425002E3163 /* MADeviceManager.m */; };
 		FE78557C1B88C43B002E3163 /* MADevice.m in Sources */ = {isa = PBXBuildFile; fileRef = FE78557B1B88C43B002E3163 /* MADevice.m */; };
@@ -750,7 +752,12 @@
 		A4B0DD801A7A04CC002F663F /* picPre.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = picPre.png; sourceTree = "<group>"; };
 		A4B0DD811A7A04CC002F663F /* picPre@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "picPre@2x.png"; sourceTree = "<group>"; };
 		A4B0DD931A7A3568002F663F /* headDemo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = headDemo.png; sourceTree = "<group>"; };
+		C987BDFF1C96CC80003F9184 /* UIView+Toast.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Toast.h"; sourceTree = "<group>"; };
+		C987BE001C96CC80003F9184 /* UIView+Toast.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Toast.m"; sourceTree = "<group>"; };
 		C99B65FB1BF74EFF00AC95DC /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
+		C99C140D1C60591100C6430A /* WPAppDefault.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WPAppDefault.h; sourceTree = "<group>"; };
+		C99C140E1C60591100C6430A /* WPAppDefault.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WPAppDefault.m; sourceTree = "<group>"; };
+		C99C14101C607ADB00C6430A /* action.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = action.h; sourceTree = SOURCE_ROOT; };
 		FE44453A1B8B33FF00C63481 /* SettingViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingViewController.h; sourceTree = "<group>"; };
 		FE44453B1B8B33FF00C63481 /* SettingViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingViewController.m; sourceTree = "<group>"; };
 		FE7855771B88C425002E3163 /* MADeviceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MADeviceManager.h; sourceTree = SOURCE_ROOT; };
@@ -912,6 +919,7 @@
 		A43528131A7721F100F4F65C /* Assistant */ = {
 			isa = PBXGroup;
 			children = (
+				C99C140C1C6058B500C6430A /* WPAppDefault */,
 				A4A2205C1ABBB0830093272F /* CustomAnimations */,
 				A4A220611ABBB0830093272F /* QREncodersdk */,
 				A4A220641ABBB0830093272F /* XDKAirMenu */,
@@ -1451,6 +1459,8 @@
 		A4A220391ABBB04A0093272F /* Methods */ = {
 			isa = PBXGroup;
 			children = (
+				C987BDFF1C96CC80003F9184 /* UIView+Toast.h */,
+				C987BE001C96CC80003F9184 /* UIView+Toast.m */,
 				A4A2203A1ABBB04A0093272F /* Additions.h */,
 				A4A2203B1ABBB04A0093272F /* JLAES+JLAdditions.h */,
 				A4A2203C1ABBB04A0093272F /* JLAES+JLAdditions.m */,
@@ -1595,6 +1605,7 @@
 				004245001AE008800058A1B0 /* InfoPlist.strings */,
 				004245031AE0088D0058A1B0 /* main.m */,
 				C99B65FB1BF74EFF00AC95DC /* LaunchScreen.storyboard */,
+				C99C14101C607ADB00C6430A /* action.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -1645,6 +1656,15 @@
 				A4B0DD811A7A04CC002F663F /* picPre@2x.png */,
 			);
 			path = "dev&mes&pic";
+			sourceTree = "<group>";
+		};
+		C99C140C1C6058B500C6430A /* WPAppDefault */ = {
+			isa = PBXGroup;
+			children = (
+				C99C140D1C60591100C6430A /* WPAppDefault.h */,
+				C99C140E1C60591100C6430A /* WPAppDefault.m */,
+			);
+			name = WPAppDefault;
 			sourceTree = "<group>";
 		};
 		FE7855761B88C39C002E3163 /* WifiModelManager */ = {
@@ -1913,6 +1933,7 @@
 				A478225C1A88B294008B9111 /* TGCameraSlideDownView.m in Sources */,
 				A47822041A88931E008B9111 /* MJRefreshHeaderView.m in Sources */,
 				004245041AE0088D0058A1B0 /* main.m in Sources */,
+				C99C140F1C60591100C6430A /* WPAppDefault.m in Sources */,
 				A47822521A88B294008B9111 /* TGCameraFlash.m in Sources */,
 				A46336761ACA9E8D0054009E /* TestTableViewCell.m in Sources */,
 				A47822011A88931E008B9111 /* MJRefreshBaseView.m in Sources */,
@@ -1924,6 +1945,7 @@
 				A4A220361ABBAF300093272F /* DetailViewController.m in Sources */,
 				A48076231AB13D8F009E0362 /* BreatheAnimationView.m in Sources */,
 				000993621AFDF19400C7682F /* SimpleInterfaceManager.m in Sources */,
+				C987BE011C96CC80003F9184 /* UIView+Toast.m in Sources */,
 				A478225B1A88B294008B9111 /* TGCameraGridView.m in Sources */,
 				0052C2011AE006E0008DE355 /* AlbumViewController.m in Sources */,
 				0052C2301AE007AA008DE355 /* NSDate+Exts.m in Sources */,

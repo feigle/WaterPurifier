@@ -140,8 +140,19 @@ static MADeviceManager *deviceManager = nil;
                 [current_device setModel_Id:[listItems objectAtIndex:2]];
                 // 发现设备内容格式 10.10.100.254,ACCF2378C17A,HF-LPB100
                 // 发现新设备后，回调给委托对象
+                
+                typeof(MADeviceManager *) __weakSelf = self;
                 if ([self.delegate respondsToSelector:@selector(deviceManager:didDiscoveredDevice:)]) {
-                    [self.delegate deviceManager:self didDiscoveredDevice:current_device];
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [__weakSelf.delegate deviceManager:__weakSelf didDiscoveredDevice:current_device];
+                    });
+                }
+            }else {
+                typeof(MADeviceManager *) __weakSelf = self;
+                if ([self.delegate respondsToSelector:@selector(deviceManager:didDiscoveredDeviceError:)]) {
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [__weakSelf.delegate deviceManager:__weakSelf didDiscoveredDeviceError:@"未收到设备ip"];
+                    });
                 }
             }
         }

@@ -9,8 +9,11 @@
 #import "SettingViewController.h"
 #import "MADeviceManager.h"
 #import "MADevice.h"
+#import "WPAppDefault.h"
+#import "action.h"
+#import "UIView+Toast.h"
 
-@interface SettingViewController ()<MADeviceManagerDelegate, UITextFieldDelegate>
+@interface SettingViewController ()<MADeviceManagerDelegate, deviceProtocol, UITextFieldDelegate, RequestManagerDelegate>
 
 @property (nonatomic, weak) IBOutlet UITableView *deviceListView;
 @property (nonatomic, weak) IBOutlet UITextField *keyTextField;
@@ -23,6 +26,7 @@
 {
     NSMutableArray *devices;
     MADevice *currentDevice;
+    RequestManager *request;
 }
 
 - (void)viewDidLoad
@@ -58,33 +62,62 @@
 }
 
 
-//  设置AP服务器模式命令： AT+NETP=TCP,Server,8899,10.10.10.254
-//       设置wifi用户名：AT+WSSSID=用户名(用户名)
-//         设置wifi密码：AT+WSKEY=WPA2PSK,TKIP/AES,密码(用户名)
-- (IBAction)sendCmd:(id)sender
+- (IBAction)ConfigDevice:(id)sender
 {
-    UIButton *btn = (UIButton *)sender;
-    NSInteger tag = btn.tag - 1000;
-    if (currentDevice.mode == COMMAND_MODE) {
-        NSString *commandStr = nil;
-        if (tag == 0) {
-            commandStr = @"AT+NETP=TCP,Server,8899,10.10.10.254";
-//            commandStr = self.keyTextField.text;
-        }else if (tag == 1) {
-            commandStr = self.ssidTextField.text;
-        }else if (tag == 3) {
-            commandStr = @"AT+Z";
-        }
-        [currentDevice sendCommandToDevice:commandStr];
-    }else {
-        NSString *commandStr = nil;
-        if (tag == 2) {
-            commandStr = self.phoneTextField.text;
-        }
-        [currentDevice sendTransString:[NSString stringWithFormat:@"ph:%@%@#", commandStr, [self handlePhoneNum:commandStr]]];
+    
+    request = [RequestManager share];
+    [request setDelegate:self];
+    
+    WPAppDefault *appInfo = [WPAppDefault shareInstance];
+    NSString *macStr = [appInfo readBindingDeviceMac];
+    
+    NSString *openId = [[NSUserDefaults standardUserDefaults] objectForKey:@"openid"];
+    NSString *token = [[NSUserDefaults standardUserDefaults] objectForKey:@"token"];
+    
+    NSMutableDictionary* formData = [NSMutableDictionary dictionaryWithCapacity:0];
+    if (openId) {
+        [formData setValue:openId forKey:@"openid"];
+    }
+    if (token) {
+        [formData setValue:token forKey:@"token"];
+    }
+    if (macStr) {
+        [formData setValue:macStr forKey:@"mac"];
+    }
+    
+    
+    NSInteger tag = ((UIButton *)sender).tag;
+    
+//    NSString *action = [NSString stringWithFormat:@"%@?openid=%@&token=%@&mac=%@", BIND, openId, token, macStr];
+    if (tag == 2001) {
+        // 绑定设备
+        [request requestWithType:AsynchronousType RequestTag:@"bind" FormData:formData Action:BIND];
+    }else if(tag == 2002){
+        // 解绑设备
+        [request requestWithType:AsynchronousType RequestTag:@"unbind" FormData:formData Action:UNBIND];
     }
 }
 
+- (IBAction)setAT_Command:(id)sender
+{
+    NSInteger tag = ((UIButton *)sender).tag;
+    if (tag == 1001) {
+        self.keyTextField.text = @"AT+NETP=TCP,Server,8899,10.10.10.254";
+    }else if (tag == 1002) {
+        self.keyTextField.text = @"AT+WSSSID=TPGuest";
+    }else if (tag == 1003) {
+        self.keyTextField.text = @"AT+WSKEY=WPAPSK,AES,Wsl13723781464";
+    }else if (tag == 1004) {
+        NSString *command = self.keyTextField.text;
+        if (command.length > 0 && currentDevice.mode == COMMAND_MODE) {
+            [currentDevice sendCommandToDevice:command];
+        }
+    }else if (tag == 1005) {
+        self.keyTextField.text = @"AT+Z";
+    }
+}
+
+// 命令模式
 - (IBAction)enterCommandMode:(id)sender
 {
     if (currentDevice) {
@@ -92,6 +125,7 @@
     }
 }
 
+// 透传模式
 - (IBAction)enterTransMode:(id)sender
 {
     if (currentDevice) {
@@ -103,7 +137,17 @@
 - (void)deviceManager:(MADeviceManager *)deviceManager didDiscoveredDevice:(MADevice *)device
 {
     [devices addObject:device];
-    [self.deviceListView reloadData];
+    
+    if (devices.count > 0) {
+        [self.view makeToast:@"搜索到新设备"];
+        [self.deviceListView reloadData];
+    }
+    
+}
+
+- (void)deviceManager:(MADeviceManager *)deviceManager didDiscoveredDeviceError:(NSString *)error
+{
+//    [self.view makeToast:@"未收到设备IP信息"];
 }
 
 - (BOOL)textFieldShouldReturn:(UITextField *)textField
@@ -142,7 +186,36 @@
         currentDevice = nil;
     }
     currentDevice = [devices objectAtIndex:indexPath.row];
+    currentDevice.delegate = self;
+    
+    // 保存绑定设备信息
+    if (currentDevice) {
+        WPAppDefault *appInfo = [WPAppDefault shareInstance];
+        [appInfo writeBindingDeviceMac:currentDevice.mac];
+    }
     [currentDevice startDevice];
+}
+
+// deviceProtocol
+- (void)deviceConnectSuccess:(MADevice *)device
+{
+    [self.view makeToast:@"设备连接成功"];
+}
+
+- (void)deviceConnectFailed:(MADevice *)device withError:(NSString *)errorString
+{
+    [self.view makeToast:errorString];
+}
+
+- (void)deviceSendMsgSuccess:(MADevice *)device withReturnStr:(NSString *)retStr
+{
+    [self.view makeToast:@"发送成功"];
+    NSLog(@"%@", retStr);
+}
+
+- (void)deviceSendMsgFailed:(MADevice *)device
+{
+    [self.view makeToast:@"发送失败"];
 }
 
 - (void)dealloc

@@ -14,6 +14,17 @@ typedef NS_ENUM(NSUInteger, DEVICE_MODE) {
     // 透传模式
     TRANS_MODE,
 };
+
+@class MADevice;
+@protocol deviceProtocol <NSObject>
+
+- (void)deviceConnectSuccess:(MADevice *)device;
+- (void)deviceConnectFailed:(MADevice *)device withError:(NSString *)errorString;
+- (void)deviceSendMsgSuccess:(MADevice *)device withReturnStr:(NSString *)retStr;
+- (void)deviceSendMsgFailed:(MADevice *)device;
+
+@end
+
 @interface MADevice : NSObject
 
 // 设备IP
@@ -27,6 +38,7 @@ typedef NS_ENUM(NSUInteger, DEVICE_MODE) {
 // 设备通信对应的socket描述符(公用设备管理器广播socket)
 @property (nonatomic, assign) NSInteger sd_udp;
 @property (nonatomic, assign) DEVICE_MODE mode;
+@property (nonatomic, weak) id<deviceProtocol> delegate;
 
 // （这两个接口一定要调用，设备才能正常使用）
 // 启动设备  跟endDevice要配对使用
@@ -46,5 +58,6 @@ typedef NS_ENUM(NSUInteger, DEVICE_MODE) {
 // 发送命令接口
 - (int)sendCommandToDevice:(NSString*)commandToSend;
 
-
 @end
+
+

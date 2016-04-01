@@ -100,7 +100,7 @@
 //    NSString *sessionID = [[NSUserDefaults standardUserDefaults] objectForKey:@"JSESSIONID"];
     //URL
     NSURL *URL = nil;
-   URL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@",HOST,action]];
+    URL = [NSURL URLWithString:[NSString stringWithFormat:@"%@/%@",HOST,action]];
     CLog(@"Post——requestURL :%@",URL);
     
     ASIFormDataRequest *request = [[ASIFormDataRequest alloc] initWithURL:URL];

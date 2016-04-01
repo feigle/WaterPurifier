@@ -22,6 +22,7 @@
 
 @property (weak, nonatomic) IBOutlet UIView *TDS1Content;
 @property (weak, nonatomic) IBOutlet UISwitch *switchBtn;
+@property (weak, nonatomic) IBOutlet UIView *indicatorView;
 
 @end
 
@@ -41,8 +42,8 @@
     //加载圆圈
     IndicatorViewCustom * indicatorView = [[IndicatorViewCustom alloc]init];
     indicatorView.frame = CGRectMake(0, 0, 320/3,self.view.frame.size.width/3);
-    indicatorView.center = CGPointMake(MRScreenWidth/4, CGRectGetMaxY(self.TDS1Content.frame)+MRScreenWidth/4);
-    [self.view addSubview:indicatorView];
+    indicatorView.center = CGPointMake(MRScreenWidth/4, (MRScreenHeight-64)/2);
+    [self.indicatorView addSubview:indicatorView];
     indicatorView.downloadedBytes = 99;
     [indicatorView startAnimation:1.5];
     

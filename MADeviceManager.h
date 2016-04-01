@@ -18,7 +18,7 @@
 - (void)deviceManagerSetConfigFailer;
 // 发现新设备
 - (void)deviceManager:(MADeviceManager *)deviceManager didDiscoveredDevice:(MADevice *)device;
-
+- (void)deviceManager:(MADeviceManager *)deviceManager didDiscoveredDeviceError:(NSString *)error;
 @end
 
 @interface MADeviceManager : NSObject
